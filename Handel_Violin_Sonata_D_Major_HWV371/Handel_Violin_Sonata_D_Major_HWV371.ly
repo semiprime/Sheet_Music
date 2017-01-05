@@ -44,7 +44,7 @@
 	d16. cs32 d8 r d g4. fs16 e |
 	fs4. e16 d cs8 d r g, |
 	fs8. e16 e8. d16 d8. a'16 gs b d8 |
-	r16 b' cs16. d32 gs,8. a16 a2 ||
+	r16 b' cs16. d32 << {gs,8. a16 a2} \\ {d,4 cs2}>> ||
 	}
 
 	\new Staff
