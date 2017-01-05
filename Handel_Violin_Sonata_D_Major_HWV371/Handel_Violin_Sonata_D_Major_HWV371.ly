@@ -1,4 +1,5 @@
 \version "2.18.2"
+\language "english"
 
 #(set-default-paper-size "a4")
 
@@ -18,49 +19,49 @@
 	\relative c'
 	{ \clef "treble"
 	\key d \major
-	r8 d fis a e'2~ |
-	e8 a, d fis b8. a16 g16. fis32 e16. d32 |
-	cis16. b32 a8 r16 a' a16.\trill g64 a b16. cis,32 d16. a32 g'8. fis16 |
-	fis4 r16 fis g16. a32 e16. fis32 g16. a32 d,16. fis32 g16. a32 |
-	cis,8 e~ e16. d32 cis16 \grace b8 a16 \grace gis8 fis4 gis'8 \grace fis8 e16 \grace d8 cis16 |
-	a4 b'8 g16 e cis8\trill e cis'4~ |
-	cis8 a32. gis64( a32 b) cis4~ cis16. fis,32 fis16.\trill fis32 d'8. \grace cis8 b16 |
-	gis16.\trill e32 b'8~ b16 e, d16.\trill cis32 d16. b'32 cis,16.\trill b32 cis16. a'32 b,16.\trill a32 |
-	gis16 e d'8~ d16. e,32 b'16. d32 c16 a' fis e32 d c8 b16. a32 |
+	r8 d fs a e'2~ |
+	e8 a, d fs b8. a16 g16. fs32 e16. d32 |
+	cs16. b32 a8 r16 a' a16.\trill g64 a b16. cs,32 d16. a32 g'8. fs16 |
+	fs4 r16 fs g16. a32 e16. fs32 g16. a32 d,16. fs32 g16. a32 |
+	cs,8 e~ e16. d32 cs16 \grace b8 a16 \grace gs8 fs4 gs'8 \grace fs8 e16 \grace d8 cs16 |
+	a4 b'8 g16 e cs8\trill e cs'4~ |
+	cs8 a32. gs64( a32 b) cs4~ cs16. fs,32 fs16.\trill fs32 d'8. \grace cs8 b16 |
+	gs16.\trill e32 b'8~ b16 e, d16.\trill cs32 d16. b'32 cs,16.\trill b32 cs16. a'32 b,16.\trill a32 |
+	gs16 e d'8~ d16. e,32 b'16. d32 c16 a' fs e32 d c8 b16. a32 |
 	a4 r4 r2 |
 	R1 |
-	r8 a, cis e b'2~ |
-	b8 e, a cis fis8. e16 d16. cis32 b16. a32 |
-	gis16. fis32 e8 gis'4~ gis8 b,~ b16 b' a16. gis32 |
-	a8 cis, e4~ e16 g fis16. e32 cis'8. e,16 |
-	d8 d'16. cis32 b4~ b16. a32 g fis e16 d8 cis16. b32 |
-	b8 d16. cis32 cis8 e16. d32 d8. e64 fis g32 e8. fis16 |
-	fis8. cis'16 d8 \tuplet 3/2 {cis16 b ais} b8 fis~ fis dis16. e32 |
-	e8. b'16 d,!8. cis16 cis8. a'16 g8. fis16 |
-	fis8 d, fis a c4~ c16 a' fis d |
-	b8 g b d b'8. a16 g16. fis32 e16. d32 |
-	cis8 a cis e cis'8. b16 a16. g32 fis16. e32 |
-	d16. cis32 d8 r d g4. fis16 e |
-	fis4. e16 d cis8 d r g, |
-	fis8. e16 e8. d16 d8. a'16 gis b d8 |
-	r16 b' cis16. d32 gis,8. a16 a2 ||
+	r8 a, cs e b'2~ |
+	b8 e, a cs fs8. e16 d16. cs32 b16. a32 |
+	gs16. fs32 e8 gs'4~ gs8 b,~ b16 b' a16. gs32 |
+	a8 cs, e4~ e16 g fs16. e32 cs'8. e,16 |
+	d8 d'16. cs32 b4~ b16. a32 g fs e16 d8 cs16. b32 |
+	b8 d16. cs32 cs8 e16. d32 d8. e64 fs g32 e8. fs16 |
+	fs8. cs'16 d8 \tuplet 3/2 {cs16 b as} b8 fs~ fs ds16. e32 |
+	e8. b'16 d,!8. cs16 cs8. a'16 g8. fs16 |
+	fs8 d, fs a c4~ c16 a' fs d |
+	b8 g b d b'8. a16 g16. fs32 e16. d32 |
+	cs8 a cs e cs'8. b16 a16. g32 fs16. e32 |
+	d16. cs32 d8 r d g4. fs16 e |
+	fs4. e16 d cs8 d r g, |
+	fs8. e16 e8. d16 d8. a'16 gs b d8 |
+	r16 b' cs16. d32 gs,8. a16 a2 ||
 	}
 
 	\new Staff
 	{ \clef "bass"
 	\key d \major
-	d2~ d8 cis16. b,32 cis8 a, | fis4. d8 g a b g |
-	a4 fis g8 fis e a | d a d' d cis cis' b b, |
-	a,4 cis8 a d b e cis' | fis d' gis e' a cis' a e |
-	fis a fis cis d d' b d | e8. fis16 gis8 a b e a d |
-	e fis gis gis, a, d e e, | a, cis' a e fis a fis cis |
-	d d' b gis e16. gis32 a16. d32 e8 e,8 | a,4 a4~ a8 gis 16. fis32 gis8 e8 |
-	cis'4. a8 d e fis d | e gis b d cis gis eis cis |
-	fis4 r8 cis ais,4 r8 ais | b fis g d e g fis fis, |
-	b,4 r r8 b g g, | fis,4 r8 cis' d' ais b fis |
-	g g, gis, gis a fis b cis' | d'4 r r8 a fis d |
-	g4 r r8 g e g | a4 r r8 a fis a |
-	b b, d b, e e' a cis' | d' d g b a fis b, cis |
+	d2~ d8 cs16. b,32 cs8 a, | fs4. d8 g a b g |
+	a4 fs g8 fs e a | d a d' d cs cs' b b, |
+	a,4 cs8 a d b e cs' | fs d' gs e' a cs' a e |
+	fs a fs cs d d' b d | e8. fs16 gs8 a b e a d |
+	e fs gs gs, a, d e e, | a, cs' a e fs a fs cs |
+	d d' b gs e16. gs32 a16. d32 e8 e,8 | a,4 a4~ a8 gs 16. fs32 gs8 e8 |
+	cs'4. a8 d e fs d | e gs b d cs gs es cs |
+	fs4 r8 cs as,4 r8 as | b fs g d e g fs fs, |
+	b,4 r r8 b g g, | fs,4 r8 cs' d' as b fs |
+	g g, gs, gs a fs b cs' | d'4 r r8 a fs d |
+	g4 r r8 g e g | a4 r r8 a fs a |
+	b b, d b, e e' a cs' | d' d g b a fs b, cs |
 	d g, a, a b2 | e a, \bar "|."
 	}
 
