@@ -35,7 +35,15 @@
 	a8 cis, e4~ e16 g fis16. e32 cis'8. e,16 |
 	d8 d'16. cis32 b4~ b16. a32 g fis e16 d8 cis16. b32 |
 	b8 d16. cis32 cis8 e16. d32 d8. e64 fis g32 e8. fis16 |
-	fis8. cis'16 d8 \tuplet 3/2 {cis16 b ais}
+	fis8. cis'16 d8 \tuplet 3/2 {cis16 b ais} b8 fis~ fis dis16. e32 |
+	e8. b'16 d,!8. cis16 cis8. a'16 g8. fis16 |
+	fis8 d, fis a c4~ c16 a' fis d |
+	b8 g b d b'8. a16 g16. fis32 e16. d32 |
+	cis8 a cis e cis'8. b16 a16. g32 fis16. e32 |
+	d16. cis32 d8 r d g4. fis16 e |
+	fis4. e16 d cis8 d r g, |
+	fis8. e16 e8. d16 d8. a'16 gis b d8 |
+	r16 b' cis16. d32 gis,8. a16 a2 ||
 	}
 
 	\new Staff
@@ -71,6 +79,5 @@
 	<_>2. <7>4 | <_> <7> <_> <6>8 <6 5> |
 	<_>4 <4>8 <3> <7>4 <6\\> | <_+>2 <_> |
 	}
-
 >>
 }
