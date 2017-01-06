@@ -25,7 +25,7 @@ upst = \relative c' {
 	a a' g f e g f a g2 ~ | g16 e f g a f g e f2 ~ |
 	f16 g f e d f e g f2 ~ | f16 d e f g e f d e2 ~ |
 	e16 c d e f d e c d e f g a f g e | f g a b c a b g c8 g e d16 c |
-	c bf a g f a g bf a b c e, d c' f, b | c1 ||
+	c bf a g f a g bf a b! c e, d c' f, b | c1\fermata ||
 	}
 
 downst = \relative c {
@@ -38,14 +38,20 @@ downst = \relative c {
 	f16 bf a g f a g bf a g f e d f e g | f e  d c 	 b d c e d c b a gs b a c |
 	b8 e, d'8.\mordent e16 c b a g fs a gs b | a c b d c e d f e8 a, e' e, | 
 	\clef bass a a, r4 \clef alto r16 e'' d c b d cs e | d2 ~ d16 a b c d b c a |
-	b2 ~ b16 d c b a c b d | c2 ~ c16 g a b c a b g |
+	b2 ~ b16 d c b a c b d | c2 ~ c16 g a bf c a bf g |
 	a8 bf a g f d' c bf | a f' e d e16 \clef bass d, e f g e f d |
-	e8 c d e f16 d e f g8 g, | c,1 \bar "|."
+	e8 c d e f16 d e f g8 g, | c,1\fermata \bar "|."
 	}
 
 \score {
 	\new PianoStaff <<
-	\new Staff = "up" \upst
-	\new Staff = "down" \downst		
+	\new Staff = "up" {
+		#(set-accidental-style 'forget)
+		\upst
+		}
+	\new Staff = "down" {
+		#(set-accidental-style 'forget)
+		\downst
+		}
 	>>
 }
