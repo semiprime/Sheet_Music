@@ -85,5 +85,24 @@
 	<_>4 <4>8 <3> <7>4 <6\\> | <_+>2 <_> |
 	}
 	}
+
+	% Alternative figured bass markup.
+	% Nicer font, but can't do slashes and source hard to read
+%	\figures {
+%	<_>2 <\markup {\medium \small 4} \markup {\medium \small 2}>4 <\markup {\medium \small 6}> | <\markup {\medium \small 7}>4 <\markup {\medium \small 6}> <_> <\markup {\medium \small 6}>8 <\markup {\medium \small 6}> |
+%	<_>4 <\markup {\medium \small 6}> <_> 8 <\markup {\medium \small 6}> <\markup {\medium \small 7}> <_> | <_> 2 <\markup {\medium \small 6}> 4 <\markup {\medium \small 6}> |
+%	<_>4 <\markup {\medium \small 6}> <_> <_+>8 <\markup {\medium \small 5+}> | <\markup {\medium \small 6}>4 <\markup {\medium \small 6}>8 <_+> <_>2 |
+%	<_> <\markup {\medium \small 7}>8 <\markup {\medium \small 6}> <_>4 | <_+>2 <\markup {\medium \small 6+}> |
+%	<_+>8 <\markup {\medium \small 6}> <_>2. | <_>4. <\markup {\medium \small 6}>8 <_>4. <\markup {\medium \small 6}>8 |
+%	<_>4 <\markup {\medium \small 5}> <\markup {\medium \small 7} _+> <\markup {\medium \small 4}>8 <_+> | <_>2 <\markup {\medium \small 4} \markup {\medium \small 2}>4 <\markup {\medium \small 6}> |
+%	<\markup {\medium \small 7}> <\markup {\medium \small 6}> <_> <\markup {\medium \small 6}> | <_+> <\markup {\medium \small 6+}> <_> <\markup {\medium \small 6}>8 <_+> |
+%	<_>4. <_+>8 <\markup {\medium \small 7} \markup {\medium \small 5}> <\markup {\medium \small 6}> <_>4 | <_>4. <\markup {\medium \small 6}>8 <_>4 <\markup {\medium \small 6} \markup {\medium \small 4}>8 <\markup {\medium \small 5} _+> |
+%	<_>2 <_>4 <\markup {\medium \small 6}>4 | <_+>4. <\markup {\medium \small 6+}>8 <\markup {\medium \small 6}> <\markup {\medium \small 6}> <_> <\markup {\medium \small 6}> |
+%	<\markup {\medium \small 6}>4 <\markup {\medium \small 6} \markup {\medium \small 5}> <_> <\markup {\medium \small 6}>8 <\markup {\medium \small 6} \markup {\medium \small 5}> | <_>2 <_>8 <_! \markup {\medium \small 6}> <_>4 |
+%	<_>1 | <_> |
+%	<_>2. <\markup {\medium \small 7}>4 | <_> <\markup {\medium \small 7}> <_> <\markup {\medium \small 6}>8 <\markup {\medium \small 6} \markup {\medium \small 5}> |
+%	<_>4 <\markup {\medium \small 4}>8 <\markup {\medium \small 3}> <\markup {\medium \small 7}>4 <\markup {\medium \small 6+}> | <_+>2 <_> |
+%	}
+
 >>
 }
