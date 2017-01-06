@@ -10,14 +10,9 @@
 	tagline = ""
 }
 
-{
-\tempo \markup { \medium \italic "Afetuoso" }
-\time 4/4
-<<
-	\set strictBeatBeaming = ##t
-	\override TupletBracket.bracket-visibility = ##f
-	\relative c'
-	{ \clef "treble"
+
+mvtA_vln = \relative c' {
+	\clef treble
 	\key d \major
 	r8 d fs a e'2~ |
 	e8 a, d fs b8. a16 g16. fs32 e16. d32 |
@@ -47,8 +42,8 @@
 	r16 b' cs16. d32 << {gs,8. a16 a2} \\ {d,4 cs2}>> ||
 	}
 
-	\new Staff
-	{ \clef "bass"
+mvtA_bass = {
+	\clef bass
 	\key d \major
 	d2~ d8 cs16. b,32 cs8 a, | fs4. d8 g a b g |
 	a4 fs g8 fs e a | d a d' d cs cs' b b, |
@@ -65,11 +60,7 @@
 	d g, a, a b2 | e a, \bar "|."
 	}
 
-	% Markup to change figured bass font
-	\new FiguredBass {
-	\override FiguredBass.BassFigure #'font-size = #-1
-	%\override FiguredBass.BassFigure #'font-series = #'normal
-	\figuremode {
+mvtA_figs = \figuremode {
 	<_>2 <4 2>4 <6> | <7>4 <6> <_> <6>8 <6> |
 	<_>4 <6> <_> 8 <6> <7> <_> | <_> 2 <6> 4 <6> |
 	<_>4 <6> <_> <_+>8 <5\\> | <6>4 <6>8 <_+> <_>2 |
@@ -84,25 +75,44 @@
 	<_>2. <7>4 | <_> <7> <_> <6>8 <6 5> |
 	<_>4 <4>8 <3> <7>4 <6\\> | <_+>2 <_> |
 	}
+
+% Alternative figured bass markup.
+% Nicer font, but can't do slashes and source hard to read
+mvtA_figs_alt = \figures {
+	<_>2 <\markup {\medium \small 4} \markup {\medium \small 2}>4 <\markup {\medium \small 6}> | <\markup {\medium \small 7}>4 <\markup {\medium \small 6}> <_> <\markup {\medium \small 6}>8 <\markup {\medium \small 6}> |
+	<_>4 <\markup {\medium \small 6}> <_> 8 <\markup {\medium \small 6}> <\markup {\medium \small 7}> <_> | <_> 2 <\markup {\medium \small 6}> 4 <\markup {\medium \small 6}> |
+	<_>4 <\markup {\medium \small 6}> <_> <_+>8 <\markup {\medium \small 5+}> | <\markup {\medium \small 6}>4 <\markup {\medium \small 6}>8 <_+> <_>2 |
+	<_> <\markup {\medium \small 7}>8 <\markup {\medium \small 6}> <_>4 | <_+>2 <\markup {\medium \small 6+}> |
+	<_+>8 <\markup {\medium \small 6}> <_>2. | <_>4. <\markup {\medium \small 6}>8 <_>4. <\markup {\medium \small 6}>8 |
+	<_>4 <\markup {\medium \small 5}> <\markup {\medium \small 7} _+> <\markup {\medium \small 4}>8 <_+> | <_>2 <\markup {\medium \small 4} \markup {\medium \small 2}>4 <\markup {\medium \small 6}> |
+	<\markup {\medium \small 7}> <\markup {\medium \small 6}> <_> <\markup {\medium \small 6}> | <_+> <\markup {\medium \small 6+}> <_> <\markup {\medium \small 6}>8 <_+> |
+	<_>4. <_+>8 <\markup {\medium \small 7} \markup {\medium \small 5}> <\markup {\medium \small 6}> <_>4 | <_>4. <\markup {\medium \small 6}>8 <_>4 <\markup {\medium \small 6} \markup {\medium \small 4}>8 <\markup {\medium \small 5} _+> |
+	<_>2 <_>4 <\markup {\medium \small 6}>4 | <_+>4. <\markup {\medium \small 6+}>8 <\markup {\medium \small 6}> <\markup {\medium \small 6}> <_> <\markup {\medium \small 6}> |
+	<\markup {\medium \small 6}>4 <\markup {\medium \small 6} \markup {\medium \small 5}> <_> <\markup {\medium \small 6}>8 <\markup {\medium \small 6} \markup {\medium \small 5}> | <_>2 <_>8 <_! \markup {\medium \small 6}> <_>4 |
+	<_>1 | <_> |
+	<_>2. <\markup {\medium \small 7}>4 | <_> <\markup {\medium \small 7}> <_> <\markup {\medium \small 6}>8 <\markup {\medium \small 6} \markup {\medium \small 5}> |
+	<_>4 <\markup {\medium \small 4}>8 <\markup {\medium \small 3}> <\markup {\medium \small 7}>4 <\markup {\medium \small 6+}> | <_+>2 <_> |
 	}
 
-	% Alternative figured bass markup.
-	% Nicer font, but can't do slashes and source hard to read
-%	\figures {
-%	<_>2 <\markup {\medium \small 4} \markup {\medium \small 2}>4 <\markup {\medium \small 6}> | <\markup {\medium \small 7}>4 <\markup {\medium \small 6}> <_> <\markup {\medium \small 6}>8 <\markup {\medium \small 6}> |
-%	<_>4 <\markup {\medium \small 6}> <_> 8 <\markup {\medium \small 6}> <\markup {\medium \small 7}> <_> | <_> 2 <\markup {\medium \small 6}> 4 <\markup {\medium \small 6}> |
-%	<_>4 <\markup {\medium \small 6}> <_> <_+>8 <\markup {\medium \small 5+}> | <\markup {\medium \small 6}>4 <\markup {\medium \small 6}>8 <_+> <_>2 |
-%	<_> <\markup {\medium \small 7}>8 <\markup {\medium \small 6}> <_>4 | <_+>2 <\markup {\medium \small 6+}> |
-%	<_+>8 <\markup {\medium \small 6}> <_>2. | <_>4. <\markup {\medium \small 6}>8 <_>4. <\markup {\medium \small 6}>8 |
-%	<_>4 <\markup {\medium \small 5}> <\markup {\medium \small 7} _+> <\markup {\medium \small 4}>8 <_+> | <_>2 <\markup {\medium \small 4} \markup {\medium \small 2}>4 <\markup {\medium \small 6}> |
-%	<\markup {\medium \small 7}> <\markup {\medium \small 6}> <_> <\markup {\medium \small 6}> | <_+> <\markup {\medium \small 6+}> <_> <\markup {\medium \small 6}>8 <_+> |
-%	<_>4. <_+>8 <\markup {\medium \small 7} \markup {\medium \small 5}> <\markup {\medium \small 6}> <_>4 | <_>4. <\markup {\medium \small 6}>8 <_>4 <\markup {\medium \small 6} \markup {\medium \small 4}>8 <\markup {\medium \small 5} _+> |
-%	<_>2 <_>4 <\markup {\medium \small 6}>4 | <_+>4. <\markup {\medium \small 6+}>8 <\markup {\medium \small 6}> <\markup {\medium \small 6}> <_> <\markup {\medium \small 6}> |
-%	<\markup {\medium \small 6}>4 <\markup {\medium \small 6} \markup {\medium \small 5}> <_> <\markup {\medium \small 6}>8 <\markup {\medium \small 6} \markup {\medium \small 5}> | <_>2 <_>8 <_! \markup {\medium \small 6}> <_>4 |
-%	<_>1 | <_> |
-%	<_>2. <\markup {\medium \small 7}>4 | <_> <\markup {\medium \small 7}> <_> <\markup {\medium \small 6}>8 <\markup {\medium \small 6} \markup {\medium \small 5}> |
-%	<_>4 <\markup {\medium \small 4}>8 <\markup {\medium \small 3}> <\markup {\medium \small 7}>4 <\markup {\medium \small 6+}> | <_+>2 <_> |
-%	}
 
+{
+\tempo \markup { \medium \italic "Afetuoso" }
+\time 4/4
+<<
+	\set strictBeatBeaming = ##t
+	\override TupletBracket.bracket-visibility = ##f
+	\mvtA_vln
+
+	\new Staff
+	\mvtA_bass
+
+	\new FiguredBass {
+	\override FiguredBass.BassFigure #'font-size = #-1
+	%\override FiguredBass.BassFigure #'font-series = #'normal
+	\mvtA_figs
+	}
+
+	% Alternative
+	%\mvtA_figs_alt
 >>
 }
