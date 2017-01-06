@@ -7,6 +7,7 @@
 	top-margin = .8\cm
 	bottom-margin = 0.8\cm
 	max-systems-per-page = 6
+	print-all-headers = ##t
 
 	% Page numbers bottom, centered
 	% From Lilypond Notation Reference section 3.2.2 Custom titles headers and footers
@@ -27,15 +28,20 @@
  	indent = #0
 }
 
+
+% Global title
 \header {
-	title = \markup {\medium "Inventio I" }
-	composer = "J. S. Bach"
-	opus = "BWV 772"
-	tagline = ""
+	title = "XV Inventions à 2"
+	subtitle = "J. S. Bach"
+	composer = " " % To make space below title
 }
 
 
-upst = \relative c' {
+%%%%%%%%%%%%%%%%%%
+%%  Inventio I  %%
+%%%%%%%%%%%%%%%%%%
+
+InvI_upst = \relative c' {
 	\clef soprano
 	\key c \major
 	\time 4/4
@@ -52,8 +58,9 @@ upst = \relative c' {
 	c bf a g f a g bf a b! c e, d c' f, b | <c g e>1\fermata ||
 	}
 
-downst = \relative c {
+InvI_downst = \relative c {
 	\clef bass
+	\key c \major
 	r2 r16 c d e f d e c | g'8 g, r4 r16 g' a b c16 a b g |
 	c8 b c d e g, a b | c e, fs g a b c4 ~ |
 	c16 d, e fs g e fs d g8 b, c d | e fs g e b8. c16 d8 d,8 |
@@ -68,16 +75,62 @@ downst = \relative c {
 	}
 
 \score {
+	\header {
+		title = \markup {\medium "Inventio I" }
+		opus = "BWV 772"
+		composer = ##f
+		subtitle = ##f
+	}
 	\new PianoStaff <<
 	\new Staff = "up" {
 		#(set-accidental-style 'forget)
 		\override Script.padding = #0.55
-		\upst
+		\InvI_upst
 		}
 	\new Staff = "down" {
 		#(set-accidental-style 'forget)
 		\override Script.padding = #0.2
-		\downst
+		\InvI_downst
+		}
+	>>
+}
+
+\pageBreak
+
+%%%%%%%%%%%%%%%%%%%
+%%  Inventio II  %%
+%%%%%%%%%%%%%%%%%%%
+
+InvII_upst = \relative c'' {
+	\clef soprano
+	\key c \minor
+	\time 4/4
+	r8 c16 b c d ef g, af bf af f f' ef d c |
+	}
+
+InvII_downst = \relative c {
+	\clef bass
+	\key c \minor
+	r1
+	}
+
+\score {
+	\header {
+		title = \markup {\medium "Inventio II" }
+		opus = "BWV 773"
+		composer = ##f
+		subtitle = ##f
+	}
+	\new PianoStaff <<
+	\new Staff = "up" {
+		#(set-accidental-style 'forget)
+		\override Script.padding = #0.55
+		\InvII_upst
+		}
+	\new Staff = "down" {
+		#(set-accidental-style 'forget)
+		\override Script.padding = #0.2
+		\InvII_downst
 		}
 	>>
 }
