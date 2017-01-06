@@ -31,13 +31,18 @@
 	title = \markup {\medium "Sonata a Violino Solo e Cembalo" }
 	composer = "G. F. Handel"
 	opus = "HWV 371"
-	tagline = ""
+	tagline = ##f
 }
 
 
-mvtA_vln = \relative c' {
+%%%%%%%%%%%%%%%%%%
+%% 1st Movement %%
+%%%%%%%%%%%%%%%%%%
+
+mvtI_vln = \relative c' {
 	\clef treble
 	\key d \major
+	\time 4/4
 	r8 d fs a e'2~ |
 	e8 a, d fs b8. a16 g16. fs32 e16. d32 |
 	cs16. b32 a8 r16 a' a16.\trill g64 a b16. cs,32 d16. a32 g'8. fs16 |
@@ -66,7 +71,7 @@ mvtA_vln = \relative c' {
 	r16 b' cs16. d32 << {gs,8. a16 a2} \\ {d,4 cs2}>> ||
 	}
 
-mvtA_bass = {
+mvtI_bass = {
 	\clef bass
 	\key d \major
 	d2~ d8 cs16. b,32 cs8 a, | fs4. d8 g a b g |
@@ -84,7 +89,7 @@ mvtA_bass = {
 	d g, a, a b2 | e a, \bar "|."
 	}
 
-mvtA_figs = \figuremode {
+mvtI_figs = \figuremode {
 	<_>2 <4 2>4 <6> | <7>4 <6> <_> <6>8 <6> |
 	<_>4 <6> <_> 8 <6> <7> <_> | <_> 2 <6> 4 <6> |
 	<_>4 <6> <_> <_+>8 <5\\> | <6>4 <6>8 <_+> <_>2 |
@@ -102,7 +107,7 @@ mvtA_figs = \figuremode {
 
 % Alternative figured bass markup.
 % Nicer font, but can't do slashes and source hard to read
-mvtA_figs_alt = \figures {
+mvtI_figs_alt = \figures {
 	<_>2 <\markup {\medium \small 4} \markup {\medium \small 2}>4 <\markup {\medium \small 6}> | <\markup {\medium \small 7}>4 <\markup {\medium \small 6}> <_> <\markup {\medium \small 6}>8 <\markup {\medium \small 6}> |
 	<_>4 <\markup {\medium \small 6}> <_> 8 <\markup {\medium \small 6}> <\markup {\medium \small 7}> <_> | <_> 2 <\markup {\medium \small 6}> 4 <\markup {\medium \small 6}> |
 	<_>4 <\markup {\medium \small 6}> <_> <_+>8 <\markup {\medium \small 5+}> | <\markup {\medium \small 6}>4 <\markup {\medium \small 6}>8 <_+> <_>2 |
@@ -119,25 +124,26 @@ mvtA_figs_alt = \figures {
 	}
 
 
-{
-\tempo \markup { \medium \italic "Afetuoso" }
-\time 4/4
-<<
-	\set strictBeatBeaming = ##t
-	\override TupletBracket.bracket-visibility = ##f
-	\override Script.padding = #0.5
-	\mvtA_vln
-
-	\new Staff
-	\mvtA_bass
-
-	\new FiguredBass {
-	\override FiguredBass.BassFigure #'font-size = #-1
-	%\override FiguredBass.BassFigure #'font-series = #'normal
-	\mvtA_figs
+\score {
+	\header {
+	piece = \markup { \italic "Afetuoso" }
 	}
+	<<
+		\set strictBeatBeaming = ##t
+		\override TupletBracket.bracket-visibility = ##f
+		\override Script.padding = #0.5
+		\mvtI_vln
 
-	% Alternative
-	%\mvtA_figs_alt
->>
+		\new Staff
+		\mvtI_bass
+
+		\new FiguredBass {
+			\override FiguredBass.BassFigure #'font-size = #-1
+			%\override FiguredBass.BassFigure #'font-series = #'normal
+			\mvtI_figs
+		}
+
+		% Alternative figured bass
+		%\mvtI_figs_alt
+	>>
 }
