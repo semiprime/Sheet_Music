@@ -3,6 +3,30 @@
 
 #(set-default-paper-size "a4")
 
+\paper {
+	top-margin = .8\cm
+	bottom-margin = 0.8\cm
+	max-systems-per-page = 7
+
+	% Page numbers bottom, centered
+	% From Lilypond Notation Reference section 3.2.2 Custom titles headers and footers
+	print-page-number = ##t
+	print-first-page-number = ##t
+	oddHeaderMarkup = \markup \null
+	evenHeaderMarkup = \markup \null
+	oddFooterMarkup = \markup {
+		\fill-line {
+			\on-the-fly \print-page-number-check-first
+			\fromproperty #'page:page-number-string
+		}
+	}
+	evenFooterMarkup = \oddFooterMarkup
+	}
+
+\layout {
+	indent = #0
+}
+
 \header {
 	title = \markup {\medium "Sonata a Violino Solo e Cembalo" }
 	composer = "G. F. Handel"
@@ -101,6 +125,7 @@ mvtA_figs_alt = \figures {
 <<
 	\set strictBeatBeaming = ##t
 	\override TupletBracket.bracket-visibility = ##f
+	\override Script.padding = #0.5
 	\mvtA_vln
 
 	\new Staff
