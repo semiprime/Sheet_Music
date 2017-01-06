@@ -65,7 +65,11 @@
 	d g, a, a b2 | e a, \bar "|."
 	}
 
-	\figures {
+	% Markup to change figured bass font
+	\new FiguredBass {
+	\override FiguredBass.BassFigure #'font-size = #-1
+	%\override FiguredBass.BassFigure #'font-series = #'normal
+	\figuremode {
 	<_>2 <4 2>4 <6> | <7>4 <6> <_> <6>8 <6> |
 	<_>4 <6> <_> 8 <6> <7> <_> | <_> 2 <6> 4 <6> |
 	<_>4 <6> <_> <_+>8 <5\\> | <6>4 <6>8 <_+> <_>2 |
@@ -79,6 +83,7 @@
 	<_>1 | <_> |
 	<_>2. <7>4 | <_> <7> <_> <6>8 <6 5> |
 	<_>4 <4>8 <3> <7>4 <6\\> | <_+>2 <_> |
+	}
 	}
 >>
 }
