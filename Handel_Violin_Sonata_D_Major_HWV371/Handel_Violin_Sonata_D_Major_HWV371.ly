@@ -132,10 +132,13 @@ mvtI_figs_alt = \figures {
 		\set strictBeatBeaming = ##t
 		\override TupletBracket.bracket-visibility = ##f
 		\override Script.padding = #0.5
+		#(set-accidental-style 'forget)
 		\mvtI_vln
 
-		\new Staff
-		\mvtI_bass
+		\new Staff {
+			#(set-accidental-style 'forget)
+			\mvtI_bass
+		}
 
 		\new FiguredBass {
 			\override FiguredBass.BassFigure #'font-size = #-1
@@ -166,6 +169,13 @@ mvtII_vln = \relative c''' {
 	d16 a' fs a d, a' fs a cs, a' e a cs, a' e a | d, a' fs a d, a' fs a cs, a' e a cs, a' e a |
 	b, fs' d fs b, fs' d fs a, fs' cs fs a, fs' cs fs | g, d' b d g, d' b d fs, d' a d fs, d' a d |
 	fs,8 d' fs d a'4 a, | r8 d fs d a'4 a, |
+	r8 e' g e b'4 d, | r8 g, b g d'4 d, |
+	d'16 a d fs e g fs e fs d fs a cs, e d cs | d a d fs e g fs e fs d fs a g b a g |
+	a cs b a b d cs b cs8. a16 gs8. gs16 | a e, a cs b d cs b cs a cs e d fs e d |
+	e cs e a fs a gs fs gs e a e b' e, cs' e, | gs8 a b cs gs e r4 |
+	d2 cs8 a cs a | b e, b' e, a b16 cs d8 d |
+	d cs16 b cs8 d16 e fs8 fs fs e16 fs | gs8 e a a, d a gs d' |
+	cs16 e d e cs d b cs a e' fs gs a e b' e, |
 	}
 
 mvtII_bass = \relative c {
@@ -180,6 +190,13 @@ mvtII_bass = \relative c {
 	fs d fs d a'4 a, | r8 d fs d a'4 a, |
 	r8 b d b fs'4 fs, | r8 g' b g d'4 d, |
 	d16 a' fs a d, a' fs a cs, a' e a cs, a' e a | d, a' fs a d, a' fs a cs, a' e a cs, a' e a |
+	e b' g b e, b' g b b, g' d g b, b' g b | g d' b d g, d' b d fs, d' a d fs, d' a d |
+	fs,8 d cs' a g16 d g b a cs b a | b8 b,16 g' fs a g fs g8 d16 fs e g fs e |
+	fs8. fs16 gs8 e a16 e a cs b d cs b | cs8. a16 gs8. gs16 a e a cs b d cs a |
+	cs8. cs,16 d fs e d e8 cs' gs a | b16 e, cs' e, gs e a e b' e, gs b gs e g b |
+	e, b' gs b e, b' gs b a e' cs e a, e' cs e | gs, e g b g e g b cs,8 a' fs b |
+	e,4 e' ~ e8 a, d4 ~ | d cs b2 |
+	a4 r r2
 	}
 
 mvtII_figs = \figuremode {
@@ -197,10 +214,13 @@ mvtII_figs = \figuremode {
 		\set strictBeatBeaming = ##t
 		\override TupletBracket.bracket-visibility = ##f
 		\override Script.padding = #0.5
+		#(set-accidental-style 'forget)
 		\mvtII_vln
 
-		\new Staff
-		\mvtII_bass
+		\new Staff {
+			#(set-accidental-style 'forget)
+			\mvtII_bass
+		}
 
 		\new FiguredBass {
 			\override FiguredBass.BassFigure #'font-size = #-1
