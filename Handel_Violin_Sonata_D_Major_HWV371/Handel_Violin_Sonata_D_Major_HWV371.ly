@@ -187,6 +187,18 @@ mvtII_vln = \relative c''' {
 	b4. cs16 d e,4. cs'8 | d16 cs b as b8 e, d4 cs8. b16 |
 	b fs' e fs d e cs d b d cs b a b g a | fs8 d fs d a'2 |
 	g8 e g e b'2 | a8 fs a fs d'2 |
+	gs,16 d' b d g, d' b d e b' gs b e, b' gs b | a, e' cs e a, e' cs e r4 r |
+	a2 fs8 d fs d | e a, e' a, d e16 fs g8 g |
+	g fs16 e fs8 g16 a b8 b b8. a32 b | cs16 e, a e cs' e, a e d' a, b cs d e fs g |
+	fs8 a fs d cs e cs a | d b d fs a fs d fs, |
+	g16 d e fs g a b cs d4 r | d16 a d fs e g fs e fs d fs a cs, e d cs |
+	d a d fs e8 fs16 g cs, e, a cs b d cs b | cs a cs e d fs e d e cs e g fs a g fs |
+	g d cs b cs g' fs e fs d, fs a d cs b a | cs e cs e d fs e g fs d, fs a d cs b a |
+	b d cs e d fs e g fs4 r8 a | b,4 r8 b' cs,4 r8 a' |
+	d,4 r8 d g16 e b' a g fs e d | cs a cs e g, b a g fs d fs a d fs e d |
+	cs a cs e g b a g fs a g b a fs e d | cs e d fs e g fs e d8 d g4 ~ |
+	g8 a fs e fs4 e8. d16 | d4 r8 a' b b b8. a32 b |
+	cs8 a d g, fs4 e8. d16 | d1 \bar "|."
 	}
 
 mvtII_bass = \relative c {
@@ -208,7 +220,7 @@ mvtII_bass = \relative c {
 	e, b' gs b e, b' gs b a e' cs e a, e' cs e | gs, e g b g e g b cs,8 a' fs b |
 	e,4 e' ~ e8 a, d4 ~ | d cs b2 |
 	a4 r r2 | r16 a g a fs g e fs d a b cs d a e' a, |
-	fs'4 a fs r | r16 d' c d b cs  a b g d e fs g d a' d, |
+	fs'4 a fs r | r16 d' c d b cs a b g d e fs g d a' d, |
 	b'4 g r2 | d' b8 g b g |
 	a d, a' d, g a16 b c8 cs | c b16 a b8 c16 d e8 e, e8. d32 e |
 	fs8 d g b c a d cs | b g b g d'4 cs, |
@@ -219,6 +231,18 @@ mvtII_bass = \relative c {
 	d, b' fs b d, b' fs b cs, b' e, b' cs, as' e a | b,8 cs d e fs e fs fs, |
 	b4 r r2 | d2 cs8 a cs a |
 	e'2 d8 b d b | fs'2 fs8 d fs d |
+	b'2 gs8 e g e | cs'2 a16 e' cs e a, e' cs e |
+	fs, cs' a cs fs, cs' a cs d,4 d' ~ | d cs b2 |
+	a4 r8 a d,4 g | a, g' fs8 e fs d |
+	d16 a b cs d e fs g a e cs e a, a' fs a | b, fs' d fs b, fs' d fs fs, d' a d fs, d' a d |
+	b8 d b g fs'16 d e fs g a b cs | d4 r d,16 a d fs e g fs e |
+	fs d fs a g b a g a4 r | a16 e a cs b d cs b cs a cs e d fs, e d |
+	e8 g a a, d4 r8 fs | g a b cs d4 r8 fs, |
+	g a b cs d d,16 fs e g fs a | g b e, g fs a g b a cs fs, a g b a cs |
+	b a g fs e d cs b e4 r8 g | a4 r8 a, a'4 r8 a, |
+	a'4 r8 cs, d16 fs e g fs a g b | a cs b d cs8 a b b b8. a32 b |
+	cs8 a d g, a4 a,8 a' | b a16 g fs8 fs, g d' g e |
+	a g fs g a4 a, | d1 \bar "|."
 	}
 
 mvtII_figs = \figuremode {
