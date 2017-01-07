@@ -147,3 +147,65 @@ mvtI_figs_alt = \figures {
 		%\mvtI_figs_alt
 	>>
 }
+
+
+%%%%%%%%%%%%%%%%%%
+%% 2nd Movement %%
+%%%%%%%%%%%%%%%%%%
+
+mvtII_vln = \relative c''' {
+	\clef treble
+	\key d \major
+	\time 4/4
+	a2 fs8 d fs d | e a, e' a, d e16 fs g8 g |
+	g fs16 e fs8 g16 a b8 b b8. a32 b | cs8 a d d, g e a g |
+	fs a fs d r4 a' ~ | a gs fs2 |
+	e4 r8 e a,4 d | d cs b2 |
+	a4 r r d' ~ | d cs b2 |
+	a4 r8 a d,4 g~ | g fs e2 |
+	d16 a' fs a d, a' fs a cs, a' e a cs, a' e a | d, a' fs a d, a' fs a cs, a' e a cs, a' e a |
+	b, fs' d fs b, fs' d fs a, fs' cs fs a, fs' cs fs | g, d' b d g, d' b d fs, d' a d fs, d' a d |
+	fs,8 d' fs d a'4 a, | r8 d fs d a'4 a, |
+	}
+
+mvtII_bass = \relative c {
+	\clef bass
+	\key d \major
+	r2 r4 d' ~ | d cs b2 |
+	r4 r8 a8 d,4 g4 ~ | g fs e2 |
+	<< \stemDown d2 \\ d'2 >> cs8 a cs a | b e, b' e, a b16 cs d8 d |
+	d cs16 b cs8 d16 e e8 e, fs8. e32 fs | gs8 e b' a, d b e d |
+	<< a'2 \\ {cs,8 a cs a} >> fs' d fs d | e a, e' a, d e16 fs g8 g |
+	g fs16 e fs8 g16 a b8 b b8. a32 b | cs8 a d d, g e a g |
+	fs d fs d a'4 a, | r8 d fs d a'4 a, |
+	r8 b d b fs'4 fs, | r8 g' b g d'4 d, |
+	d16 a' fs a d, a' fs a cs, a' e a cs, a' e a | d, a' fs a d, a' fs a cs, a' e a cs, a' e a |
+	}
+
+mvtII_figs = \figuremode {
+	<_>1 | <_>2 <7>4 <6> |
+	<7>8 <6> <_>4 <6> <_> | <4 2> <6> <7> <6> |
+	}
+
+
+\score {
+	\header {
+	piece = \markup { \italic "Allegro" }
+	opus = ##f
+	}
+	<<
+		\set strictBeatBeaming = ##t
+		\override TupletBracket.bracket-visibility = ##f
+		\override Script.padding = #0.5
+		\mvtII_vln
+
+		\new Staff
+		\mvtII_bass
+
+		\new FiguredBass {
+			\override FiguredBass.BassFigure #'font-size = #-1
+			%\override FiguredBass.BassFigure #'font-series = #'normal
+			\mvtII_figs
+			}
+	>>
+}
