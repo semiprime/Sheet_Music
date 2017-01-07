@@ -175,7 +175,18 @@ mvtII_vln = \relative c''' {
 	e cs e a fs a gs fs gs e a e b' e, cs' e, | gs8 a b cs gs e r4 |
 	d2 cs8 a cs a | b e, b' e, a b16 cs d8 d |
 	d cs16 b cs8 d16 e fs8 fs fs e16 fs | gs8 e a a, d a gs d' |
-	cs16 e d e cs d b cs a e' fs gs a e b' e, |
+	cs16 e d e cs d b cs a e' fs gs a e b' e, | cs'4 a fs r |
+	r16 a g a fs g e fs d a b cs d a e' a, | fs'4 d b r |
+	r16 d' c d b cs a b g d e fs g b a g | fs a g a fs g e fs g d b d g, d' b d |
+	fs, c' a cs fs, c' a cs b8 d, e e' | fs d r d' g,4 c ~ |
+	c b a2 | g16 g, b g d' g, b g fs' a, d a fs' a, d a |
+	a' d, fs d a' d, fs d d'8 fs, g4 | r8 e fs4 r8 d e4 |
+	r8 cs d b c4 r8 as | b g'16 fs e g fs e as fs gs as b e, cs' fs, |
+	d' fs, d fs b, fs' d fs b e, g e b' e, g e | cs' a, cs a e' a, cs a a' d, fs d a' d, fs d |
+	b' g, b g d' g, b g g' cs, e cs g' cs, e cs | as'8 fs as fs cs'4 as8 fs |
+	b4. cs16 d e,4. cs'8 | d16 cs b as b8 e, d4 cs8. b16 |
+	b fs' e fs d e cs d b d cs b a b g a | fs8 d fs d a'2 |
+	g8 e g e b'2 | a8 fs a fs d'2 |
 	}
 
 mvtII_bass = \relative c {
@@ -196,7 +207,18 @@ mvtII_bass = \relative c {
 	cs8. cs,16 d fs e d e8 cs' gs a | b16 e, cs' e, gs e a e b' e, gs b gs e g b |
 	e, b' gs b e, b' gs b a e' cs e a, e' cs e | gs, e g b g e g b cs,8 a' fs b |
 	e,4 e' ~ e8 a, d4 ~ | d cs b2 |
-	a4 r r2
+	a4 r r2 | r16 a g a fs g e fs d a b cs d a e' a, |
+	fs'4 a fs r | r16 d' c d b cs  a b g d e fs g d a' d, |
+	b'4 g r2 | d' b8 g b g |
+	a d, a' d, g a16 b c8 cs | c b16 a b8 c16 d e8 e, e8. d32 e |
+	fs8 d g b c a d cs | b g b g d'4 cs, |
+	r8 d fs d b'4 b,8 b' | a g a fs g fs g e |
+	fs e fs d e d e fs | g e cs! e fs 4 r |
+	b2 g8 e g e | a2 fs8 d fs d |
+	g2 e8 cs e cs | fs16 cs' as cs fs, cs' as cs e, cs' as cs e, cs' as cs |
+	d, b' fs b d, b' fs b cs, b' e, b' cs, as' e a | b,8 cs d e fs e fs fs, |
+	b4 r r2 | d2 cs8 a cs a |
+	e'2 d8 b d b | fs'2 fs8 d fs d |
 	}
 
 mvtII_figs = \figuremode {
