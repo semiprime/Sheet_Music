@@ -45,13 +45,16 @@ I_upst = \relative c' {
 	g'-5 d-3 b-2 g-1 d'-5 b-4 g-2 d-1 | g4-4 r r2 |
 	R1 | r16 c,-1 d-2 e-3 f-4 g-3 a-4 b-3 c-5 g-1 a-2 b-4 c-3 d-4 e-3 f-4 |
 	g-5 f-4 e-3 d-2 c-1 b-3 a-2 g-1 c-5 b-4 a-3 g-2 f-1 e-3 d-2 c-1 | g'4-5 r r2 |
-	r2 r16 g-2 a-3 b-4 c-1 a b c | d b c d e c d e f d e f g e f g |
+	r2 r16 g-2 a-3 b-4 c-1 a^\markup{\small \italic "simili"} b c | d b c d e c d e f d e f g e f g |
 	a f g a b g a b c g-4 e-2 c-1 g'-5 e-4 c-2 g-1 | c-4 g-3 e-2 c-1 c'8-5 c,-1 r2 |
 	R1 | R1 |
 	r16 c'-3 d-4 b-2 c-4 g-1 d'-4 g,-1 e'-4 c-2 d-4 f,-1 e'-5 g,-1 f'-5 g,-1 | g'-5 g,-1 f'-4 d-2 e-4 c-2 d-4 g,-1 g'-5 g,-1 f'-4 d-2 e-4 c-2 d-3 a-1 |
 	b-4 g-2 a-4 d,-1 d'-5 d,-1 c'-4 a-2 b-4 g-2 a-4 fs-2 g-4 d-1 a'-4 d,-1 | b'-5 d,-1 c'-4 a-2 d-4 g,-2 e'-3 fs-4 g-5 fs-4 e-3 d-2 c-1 b-3 a-2 g-1 |
 	d'-5 d,-1 e-2 fs-3 g-4 a-3 b-4 c-3 d-5 c-4 b-3 a-2 g-1 fs-3 e-2 d-1 | d'4-4 r r2 |
 	R1 | r2 d8-4 c-3 b-2 g-1 |
+	fs16-2 g-3 a-4 d,-1 g-4 d c'-5 fs,-2 d'-5 d,-1 c'-5 d,-1 b'-4 d,-1 a'-5 d,-2 | b'8-4 d,-1 r16 e-2 fs-3 g-4 a8-5 g-4 r16 fs^\markup{\small \italic "simili"} g a |
+	b8 a r16 g a b c8 b r16 a b c | d8 c r16 b c d e8 d r16 c d e |
+	f-5 e-4 d-3 c-2 d-5 d,-1 g-4 f-3 e8-2 g-4 c-3 e-4 | a,-2 c-4 f,-2 a-4 d,-2 fs-4 b-2 d-4 |
 	}
 
 I_downst = \relative c {
@@ -62,12 +65,15 @@ I_downst = \relative c {
 	d-1 b-2 g-3 d-5 g-1 d-2 b-3 g-5 | c4 r r2 |
 	R1 | r16 g-5 a-4 b-3 c-2 d-1 e-3 f-2 g-1 c,-5 d-4 e-3 f-2 g-1 a-3 b-2 |
 	c-1 b-2 a-3 g-4 f-3 e-4 d-3 c-5 g'4-1 r | R1 |
-	R1 | r4 r16 c,-4 d-3 e-2 f-1 d e f g e f g |
+	R1 | r4 r16 c,-4 d-3 e-2 f-1 d^\markup{\small \italic "simili"} e f g e f g |
 	a f g a b g a b c a b c d b c d | e-1 c-2 g-4 e-5 c'-1 g-2 e-4 c-5 g'-1 e-2 c-3 g-5 c8-1 c,-5 |
 	R1 | r2 r4 c''8 fs, |
 	g fs b fs g d b' fs | g4 r r2 |
 	R1 | r16 g-3 a-2 fs-4 g-1 d-4 a'-1 d,-4 b'-2 g-4 a-1 d,-4 b'-1 d,-5 c'-1 d,-5 |
 	d'-1 d,-5 c'-2 a-4 b-2 g-4 a-2 d,-5 g-1 fs-2 e-3 d-4 c-3 b-4 a-3 g-4 | g'-1 g,-5 a-4 b-3 c-2 d-1 e-3 fs-2 g-1 d-4 e-3 fs-2 g-1 a-3 b-2 c-1 |
+	d8-2 c-3 b-4 a-3 b-1 a-2 g-1 fs-4 | g16-1 g,-5 a-4 b-3 c8-2 b-3 r16 a_\markup{\small \italic "simili"} b c d8 c |
+	r16 b c d e8 d r16 c d e f8 e | r16 d e fs g8 fs r16 e fs gs a8 g! |
+	a-1 a,-5 b'-1 b,-5 c16-4 c'-1 b-2 c-1 a-4 b-2 g-4 a-2 | f-4 g-2 e-4 g-2 d-4 e-2 c-4 d-2 b-4 c-2 a-4 b-2 g-5 g'-1 a-3 b-2 |
 	}
 
 \score {
