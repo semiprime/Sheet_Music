@@ -105,13 +105,25 @@ InvII_upst = \relative c'' {
 	\clef soprano
 	\key c \minor
 	\time 4/4
-	r8 c16 b c d ef g, af bf af f f' ef d c |
+	r8 c16 b c d ef g, af bf af f f' ef d c | b af' g f ef d c b c d c d d8.\trill c32 d |
+	ef16 d c d ef f g8 g\prall f r f | f\prall ef r d ef af, af16 f bf f |
+	g8 ef' ~ ef16 d ef bf d ef af g f ef d c | bf d g f ef d c bf af c f c d8. d16 |
+	ef bf c bf g'4 ~ g16 bf, c bf af'4 ~ | af16 bf, ef d g f af g c bf af g f bf af bf |
+	g bf af bf ef, g f g c, d ef f d ef f g | ef f g af bf af c bf af g f af d,4 ~ |
+	d16 d g d ef c d bf c4 ~ c16 g' fs a | c, bf c8 ~ c16 fs e d bf'8. e,16 fs8. g16 |
+	g8 g,16 fs g a bf d, ef16 f ef c c' bf a g |
 	}
 
-InvII_downst = \relative c {
+InvII_downst = \relative c' {
 	\clef bass
 	\key c \minor
-	r1
+	R1 | R1 |
+	\clef alto r8 c16 b c d ef g, af bf af f f' ef d c | b af' g f ef d c b c d c d d8.\prall cf32 d |
+	ef16 d c d ef f g8 g\prall f r f | f\prall ef r d ef af, ~ af16 f bf f |
+	g8 ef' ~ ef16 d ef bf c ef af g f ef d c | bf ef g f ef d c bf af c f c d8.\prall d16 |
+	ef bf c bf g'4 ~g16 bf, c bf af'4 ~ | af16 bf, ef d g f af g c bf af g f bf af bf |
+	g8 ef,16 f g a bf d, ef f ef c c' bf a g | fs ef' d c bf a g fs g a g a af8.\prall g32 af |
+	bf16 a g af bf c d8 d\prall c r c |
 	}
 
 \score {
@@ -129,7 +141,7 @@ InvII_downst = \relative c {
 		}
 	\new Staff = "down" {
 		#(set-accidental-style 'forget)
-		\override Script.padding = #0.2
+		\override Script.padding = #0.45
 		\InvII_downst
 		}
 	>>
