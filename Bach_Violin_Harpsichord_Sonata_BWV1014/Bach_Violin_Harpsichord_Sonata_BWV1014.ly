@@ -55,11 +55,28 @@ mvtII_vln = \relative c''' {
 	% \bar "|."
 	}
 
-mvtII_kbd = \relative c {
+mvtII_kbd_up = \relative c'' {
+	\clef treble
+	\key d \major
+	\time 4/4
+	r16 d e fs g, e' fs, d' cs a cs e a d, cs g' |
+	fs e g fs e a, g fs e cs' d e a, d g, cs |
+	d( fs) b( a) g( fs) e( d) cs8\trill d16( cs) e( d) fs( e) |
+	fs8. b16 a d, cs g' fs4 r |
+	e2 ~ e16 e, gs b e a, gs d' |
+	% \bar "|."
+	}
+
+mvtII_kbd_dn = \relative c {
 	\clef bass
 	\key d \major
-	r2 r4 d' ~ | d cs b2 |
-	%a g fs g a4 a, | d1 \bar "|."
+	\time 4/4
+	d8 d' cs d a g fs e |
+	d d' cs d a g fs e |
+	d d' cs d a g fs e |
+	d g a a, d, d' cs b |
+	a a' gs a e d cs b |
+	% \bar "|."
 	}
 
 \score {
@@ -70,13 +87,13 @@ mvtII_kbd = \relative c {
 	<<
 		\set strictBeatBeaming = ##t
 		\override Script.padding = #0.5
-		#(set-accidental-style 'forget)
+		#(set-accidental-style 'neo-modern)
 		\mvtII_vln
 
-		%\new Staff {
-		%	#(set-accidental-style 'forget)
-		%	\mvtII_bass
-		%}
-
+		\new PianoStaff <<
+			\new Staff = "upper" \mvtII_kbd_up
+			#(set-accidental-style 'neo-modern)
+			\new Staff = "lower" \mvtII_kbd_dn
+		>>
 	>>
 }
