@@ -65,7 +65,17 @@ mvtII_vln = \relative c''' {
 	gs16 fs a( gs) b( a) gs( a) fs( es) fs( b,) a8 gs16 fs |
 	fs8 cs' a'4 ~ a16 b,16 e( ds) fs( e) g( fs) |
 	g2 ~ g16 a, d( cs) e( d) fs( e) |
-	% \bar "|."
+	fs8. g32 a g16( fs) e( d) a'2 ~ |
+	a16 g b a g fs e d cs8 b16 a r8 e' |
+	fs16( e) g( fs) r a g( fs) g fs b( a) r a d cs |
+	d cs32( b a16) g fs8 e16\trill d d8 a16( b) c( b) d( c) |
+	r8 c16( d32 e) d16( c) b( a) b8 b16( cs!) d( cs) e( d) |
+	r8 d16( e32 fs) e16( d) cs( b) cs( b) cs( d) e( d) fs( e) |
+	r8 e16( fs32 g) fs16( e) d( cs) d cs( b a g fs e) fs |
+	e8 d' g4 ~ g16 fs e d cs b a b |
+	a8 g' e'4 ~ e16 d cs b a g fs g |
+	fs( e) g( fs) e( d) cs( d) cs4 r8 a' |
+	g16 fs b a fs8\trill e16 d d2\fermata \bar "|."
 	}
 
 mvtII_kbd_up = \relative c'' {
@@ -90,7 +100,17 @@ mvtII_kbd_up = \relative c'' {
 	a8 cs16 b d cs b cs gs b' a fs es8. fs16 |
 	fs8 a!16 g fs e ds e ds4 r |
 	r8 g16 fs( e) d cs( d) cs4 r |
-	% \bar "|."
+	r16 a d cs b a g fs e a cs e a d, cs g' |
+	fs e g fs b a g fs e cs d e a, d g, cs |
+	d cs b a g fs e fs32 d cs8 d16( cs) e( d) fs( e) |
+	fs8. b16 a d, cs g' fs e fs g a( g) b( a) |
+	r8 a16( b32 c) b16 a g fs g8 gs16 a b a cs b |
+	r8 b16( cs32 d) cs16 b a gs a8 e16 fs g( fs) a( g) |
+	r8 g16( a32 b) a16 g fs e fs a b cs d4 ~ |
+	d16 cs b a g fs e fs e8 b' g'4 ~ |
+	g16 fs e d cs b a b a8 e'16 d e4 ~ |
+	e16 a, d( cs) b a g fs e g a cs e g a cs, |
+	d8. e16 cs8.\trill d16 <d a fs>2 \bar "|."
 	}
 
 mvtII_kbd_dn = \relative c {
@@ -114,8 +134,18 @@ mvtII_kbd_dn = \relative c {
 	gs fs es gs cs ds es cs |
 	fs, fs' es fs d b cs cs, |
 	fs fs' e! fs b, a g fs |
-	e e' d e a, g fs e | 
-	% \bar "|."
+	e e' d e a, g fs e |
+	d d'' cs d a g fs e |
+	d d' cs d a g fs e |
+	d d cs d a g' fs e |
+	d g a a, d d a fs |
+	d d' c d g, e' b gs |
+	e e' d e a, a' e cs |
+	a a' g a d, cs b d |
+	g, fs e d cs e a b |
+	cs d e fs g a b cs |
+	d16 cs b a g fs e d g,4 r8 fs |
+	b g a a d,2\fermata \bar "|."
 	}
 
 \score {
