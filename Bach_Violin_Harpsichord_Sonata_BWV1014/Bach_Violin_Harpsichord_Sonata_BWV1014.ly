@@ -57,6 +57,14 @@ mvtII_vln = \relative c''' {
 	a gs32( fs e16) d cs8\prall b16( a) a4 r8 c ~ |
 	c16 b( as b) e4 ~ e8. fs32 g fs16 e d e32 cs |
 	d8 e\trill fs4 ~ fs16 e g( fs) b( as) cs( e,) |
+	d8 \grace{e16 fs} g8 ~ g16 fs e d cs( b) d( cs) e( d) fs( e) |
+	fs8. g16 d8 cs16 b b8 fs'16 g a( g) b( a) |
+	r8 a16( b32 cs) b16( a) g( fs) g8 e16( fs) g( fs) a( g) |
+	r8 g16( a32 b) a16 g fs g32( e) fs8 e d4 ~ |
+	d16 cs b a gs fs es fs es8 b' gs'4 ~ |
+	gs16 fs a( gs) b( a) gs( a) fs( es) fs( b,) a8 gs16 fs |
+	fs8 cs' a'4 ~ a16 b,16 e( ds) fs( e) g( fs) |
+	g2 ~ g16 a, d( cs) e( d) fs( e) |
 	% \bar "|."
 	}
 
@@ -74,6 +82,14 @@ mvtII_kbd_up = \relative c'' {
 	cs8. fs16 e a, gs d' cs e fs g a cs, ds b' |
 	a g fs e r e' fs g fs e( d cs) b as b cs |
 	fs, b cs d e, cs' d, b' as fs a cs fs e g8 ~ |
+	g16 fs e d cs d as b as8 b16( as) cs( b) d( cs) |
+	d e32 d cs d b16 as8. b16 b8 ds16( e) fs e g fs |
+	r8 fs16( g32 a) g16 fs e ds e8 cs16( d!) e d fs e |
+	r8 e16 fs32 g fs16 e d e32( cs) d16 cs b a gs fs es fs |
+	es8 d' gs4 ~ gs16 fs es( fs32 gs) b,16 a b gs |
+	a8 cs16 b d cs b cs gs b' a fs es8. fs16 |
+	fs8 a!16 g fs e ds e ds4 r |
+	r8 g16 fs( e) d cs( d) cs4 r |
 	% \bar "|."
 	}
 
@@ -91,6 +107,14 @@ mvtII_kbd_dn = \relative c {
 	a d e e, a a' g fs |
 	e g cs, e as, fs gs as |
 	b b' as b fs e d cs |
+	b b' as b fs e d cs |
+	b e fs fs, b b' fs ds |
+	b b' a b e, a e cs |
+	a a' g a d, cs b a |
+	gs fs es gs cs ds es cs |
+	fs, fs' es fs d b cs cs, |
+	fs fs' e! fs b, a g fs |
+	e e' d e a, g fs e | 
 	% \bar "|."
 	}
 
@@ -101,6 +125,7 @@ mvtII_kbd_dn = \relative c {
 	}
 	<<
 		\new Staff {
+			\override Score.SpacingSpanner.strict-grace-spacing = ##t
 			\set strictBeatBeaming = ##t
 			\override Script.padding = #0.5
 			#(set-accidental-style 'forget)
