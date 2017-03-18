@@ -51,7 +51,12 @@ mvtII_vln = \relative c''' {
 	a16 g b a g( fs) e( d) cs8 b16 a r8 e' |
 	fs16( e) g( fs) r a g fs g( fs) b( a) r a d cs |
 	d( cs32 b a16) g fs8 e16\prall d d( e fs gs) a( gs a b) |
-	cs,8. b16 d( cs) b( a) e'2 |
+	cs,8. b16 d( cs) b( a) e'2 ~ |
+	e16 d fs( e) d( cs) b( a) gs8 fs16 e r8 b' |
+	cs16( b) d( cs) r e( d cs) d( cs) fs( e) r e a( gs) |
+	a gs32( fs e16) d cs8\prall b16( a) a4 r8 c ~ |
+	c16 b( as b) e4 ~ e8. fs32 g fs16 e d e32 cs |
+	d8 e\trill fs4 ~ fs16 e g( fs) b( as) cs( e,) |
 	% \bar "|."
 	}
 
@@ -64,6 +69,11 @@ mvtII_kbd_up = \relative c'' {
 	d( fs) b( a) g( fs) e( d) cs8\trill d16( cs) e( d) fs( e) |
 	fs8. b16 a d, cs g' fs4 r |
 	e2 ~ e16 e, gs b e a, gs d' |
+	cs b d cs fs e d cs b gs a b e, a d, gs |
+	a gs fs e d cs b a gs8 a16 g b a cs b |
+	cs8. fs16 e a, gs d' cs e fs g a cs, ds b' |
+	a g fs e r e' fs g fs e( d cs) b as b cs |
+	fs, b cs d e, cs' d, b' as fs a cs fs e g8 ~ |
 	% \bar "|."
 	}
 
@@ -76,6 +86,11 @@ mvtII_kbd_dn = \relative c {
 	d d' cs d a g fs e |
 	d g a a, d, d' cs b |
 	a a' gs a e d cs b |
+	a a' gs a e d cs b |
+	a a gs a e d' cs b |
+	a d e e, a a' g fs |
+	e g cs, e as, fs gs as |
+	b b' as b fs e d cs |
 	% \bar "|."
 	}
 
@@ -85,15 +100,18 @@ mvtII_kbd_dn = \relative c {
 	opus = ##f
 	}
 	<<
-		\set strictBeatBeaming = ##t
-		\override Script.padding = #0.5
-		#(set-accidental-style 'neo-modern)
-		\mvtII_vln
+		\new Staff {
+			\set strictBeatBeaming = ##t
+			\override Script.padding = #0.5
+			#(set-accidental-style 'forget)
+			\mvtII_vln
+		}
 
 		\new PianoStaff <<
 			\new Staff = "upper" \mvtII_kbd_up
-			#(set-accidental-style 'neo-modern)
+			#(set-accidental-style 'forget)
 			\new Staff = "lower" \mvtII_kbd_dn
+			#(set-accidental-style 'forget)
 		>>
 	>>
 }
