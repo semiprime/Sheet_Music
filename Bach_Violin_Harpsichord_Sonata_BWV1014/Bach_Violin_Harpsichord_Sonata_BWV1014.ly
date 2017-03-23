@@ -6,7 +6,7 @@
 \paper {
 	top-margin = .8\cm
 	bottom-margin = 0.8\cm
-	max-systems-per-page = 7
+	%max-systems-per-page = 7
 
 	% Page numbers bottom, centered
 	% From Lilypond Notation Reference section 3.2.2 Custom titles headers and footers
@@ -39,11 +39,67 @@
 %% 1st Movement %%
 %%%%%%%%%%%%%%%%%%
 
+mvtI_vln = \relative c'' {
+	\clef treble
+	\key d \major
+	\time 6/4
+	R1. | R | R | R |
+	fs ~ |
+	}
+
+mvtI_kbd_up = \relative c'' {
+	\clef treble
+	\key d \major
+	\time 4/4
+	<<{fs2. ~ fs8 g g fs fs e} \\ {d2. ~ d8 e e d d cs}>> |
+	<<{e2. ~ e8 fs fs e e d} \\ {cs2. ~ cs8 d d cs cs b}>> |
+	<<{d2. ~ d8 b' b a a g} \\ {b,2. ~ b8 cs cs ds ds e}>> |
+	<<{g fs fs e e d d cs cs b b as} \\ {e' d! d cs cs fs, fs e e d d cs}>> |
+	<<{as' gs gs as as b b as as b b cs} \\ {cs, b b cs cs d d cs cs d d e}>> |
+	}
+
+mvtI_kbd_dn = \relative c {
+	\clef bass
+	\key d \major
+	\time 6/4
+	b8 d fs b as b g,4 r r |
+	cs8 e g b as b fs,4 r r |
+	b8 b' b a a g g4 g, fs |
+	e e' fs gs as b |
+	e, r r d r r |
+	}
+
+\score {
+	\header {
+	piece = \markup { \italic "Adagio" }
+	}
+	<<
+		\new Staff {
+			%\override Score.SpacingSpanner.strict-grace-spacing = ##t
+			\set strictBeatBeaming = ##t
+			\override Script.padding = #0.5
+			#(set-accidental-style 'forget)
+			\mvtI_vln
+		}
+
+		\new PianoStaff <<
+			\new Staff = "upper" \mvtI_kbd_up
+			#(set-accidental-style 'forget)
+			\new Staff = "lower" \mvtI_kbd_dn
+			#(set-accidental-style 'forget)
+		>>
+	>>
+}
+
 %%%%%%%%%%%%%%%%%%
 %% 2nd Movement %%
 %%%%%%%%%%%%%%%%%%
 
-mvtII_vln = \relative c''' {
+%%%%%%%%%%%%%%%%%%
+%% 3rd Movement %%
+%%%%%%%%%%%%%%%%%%
+
+mvtIII_vln = \relative c''' {
 	\clef treble
 	\key d \major
 	\time 4/4
@@ -78,7 +134,7 @@ mvtII_vln = \relative c''' {
 	g16 fs b a fs8\trill e16 d d2\fermata \bar "|."
 	}
 
-mvtII_kbd_up = \relative c'' {
+mvtIII_kbd_up = \relative c'' {
 	\clef treble
 	\key d \major
 	\time 4/4
@@ -113,7 +169,7 @@ mvtII_kbd_up = \relative c'' {
 	d8. e16 cs8.\trill d16 <d a fs>2 \bar "|."
 	}
 
-mvtII_kbd_dn = \relative c {
+mvtIII_kbd_dn = \relative c {
 	\clef bass
 	\key d \major
 	\time 4/4
@@ -159,13 +215,13 @@ mvtII_kbd_dn = \relative c {
 			\set strictBeatBeaming = ##t
 			\override Script.padding = #0.5
 			#(set-accidental-style 'forget)
-			\mvtII_vln
+			\mvtIII_vln
 		}
 
 		\new PianoStaff <<
-			\new Staff = "upper" \mvtII_kbd_up
+			\new Staff = "upper" \mvtIII_kbd_up
 			#(set-accidental-style 'forget)
-			\new Staff = "lower" \mvtII_kbd_dn
+			\new Staff = "lower" \mvtIII_kbd_dn
 			#(set-accidental-style 'forget)
 		>>
 	>>
