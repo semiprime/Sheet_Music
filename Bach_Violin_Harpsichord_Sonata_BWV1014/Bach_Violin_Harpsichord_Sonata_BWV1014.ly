@@ -45,6 +45,10 @@ mvtI_vln = \relative c'' {
 	\time 6/4
 	R1. | R | R | R |
 	fs ~ |
+	fs2. ~ fs4 ~ fs16 g( a g fs e ds e32 cs) |
+	b4 b'2 ~ b2. ~ |
+	b2. ~ b4 ~ b16 cs d cs b a g a32 fs |
+	e1. ~ |
 	}
 
 mvtI_kbd_up = \relative c'' {
@@ -56,17 +60,25 @@ mvtI_kbd_up = \relative c'' {
 	<<{d2. ~ d8 b' b a a g} \\ {b,2. ~ b8 cs cs ds ds e}>> |
 	<<{g fs fs e e d d cs cs b b as} \\ {e' d! d cs cs fs, fs e e d d cs}>> |
 	<<{as' gs gs as as b b as as b b cs} \\ {cs, b b cs cs d d cs cs d d e}>> |
+	<<{cs'2. b8 cs cs ds ds e} \\ {e,2. ds8 e e fs fs g}>> |
+	<<{e'4. b8 d cs d e e fs fs g} \\ {g,4. e8 b' as b cs cs d d e}>> |
+	<<{g2. ~ g8 fs fs gs gs as ~ } \\ {e2. ~ e8 b b e e cs}>> |
+	<<{as'2. ~ as8 gs as b a b } \\ {cs,2. ~ cs8 b cs d cs d}>> |
 	}
 
 mvtI_kbd_dn = \relative c {
 	\clef bass
 	\key d \major
 	\time 6/4
-	b8 d fs b as b g,4 r r |
+	b8 d fs b as b b,4 r r |
 	cs8 e g b as b fs,4 r r |
 	b8 b' b a a g g4 g, fs |
 	e e' fs gs as b |
 	e, r r d r r |
+	as8 cs fs as gs as a,!4 r r |
+	g8 b e g fs g fs,4 r r |
+	e8 g b e d e d,4 r r |
+	cs'8 e g b as b b,4 r r |
 	}
 
 \score {
