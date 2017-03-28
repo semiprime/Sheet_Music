@@ -28,7 +28,7 @@
 }
 
 \header {
-	title = \markup {\medium "Sonata" }
+	title = \markup {\medium "Sonata I a Violino Solo e Cembalo Concertanto" }
 	composer = "J. S. Bach"
 	opus = "BWV 1014"
 	tagline = ##f
@@ -49,6 +49,12 @@ mvtI_vln = \relative c'' {
 	b4 b'2 ~ b2. ~ |
 	b2. ~ b4 ~ b16 cs d cs b a g a32 fs |
 	e1. ~ |
+	e2. ~ e16 d( cs d e d e fs32 g) fs8\trill g16 e |
+	d4.\trill cs8 b16 as b8 b2 r4 |
+	b'2. ~ b4. a8 gs4 |
+	a1. ~ |
+	a8 gs es fs d'4 ~ d8 cs b a gs fs |
+	es4.\trill ds8 cs4 cs2.\mordent ~ |
 	}
 
 mvtI_kbd_up = \relative c'' {
@@ -64,6 +70,12 @@ mvtI_kbd_up = \relative c'' {
 	<<{e'4. b8 d cs d e e fs fs g} \\ {g,4. e8 b' as b cs cs d d e}>> |
 	<<{g2. ~ g8 fs fs gs gs as ~ } \\ {e2. ~ e8 b b e e cs}>> |
 	<<{as'2. ~ as8 gs as b a b } \\ {cs,2. ~ cs8 b cs d cs d}>> |
+	<<{cs'4. b8 a b a2\trill r4} \\ {e2. cs2 r4} >> |
+	<<{<d fs b>8 fs fs e e d d2. ~} \\ {b8 d d as cs fs, fs4. gs8 fs g}>> |
+	<<{d'2. ~ d8 cs cs b b a} \\ {es4 ~ es16 fs es fs fs8.^\trill es32 fs gs8 es es cs cs fs}>> |
+	<<{a4 r r r r8 fs' e fs} \\ {fs,4. a8 gs a fs2. ~}>> |
+	<<{d'4. cs8 fs4 ~ fs8 e d cs b a} \\ {fs4. a8 gs a b4 fs2}>> |
+	<<{gs2. a4. cs8 fs es} \\ {r8 gs,, cs ds fs es fs2 ~ fs8 gs}>> |
 	}
 
 mvtI_kbd_dn = \relative c {
@@ -79,6 +91,14 @@ mvtI_kbd_dn = \relative c {
 	g8 b e g fs g fs,4 r r |
 	e8 g b e d e d,4 r r |
 	cs'8 e g b as b b,4 r r |
+	as8 cs e g fs g fs,2 r4 |
+	b2 r4 b8 d fs b a b |
+	gs, b d gs fs gs es,4 r r |
+	\clef tenor
+	fs'8 a cs fs es fs d, fs a d cs d |
+	\clef bass
+	b,4 r r gs a b |
+	cs8 es gs cs b cs a, cs fs a gs a |
 	}
 
 \score {
