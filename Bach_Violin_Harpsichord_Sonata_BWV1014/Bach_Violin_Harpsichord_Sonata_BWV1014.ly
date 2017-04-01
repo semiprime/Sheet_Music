@@ -54,7 +54,12 @@ mvtI_vln = \relative c'' {
 	b'2. ~ b4. a8 gs4 |
 	a1. ~ |
 	a8 gs es fs d'4 ~ d8 cs b a gs fs |
-	es4.\trill ds8 cs4 cs2.\mordent ~ |
+	es4.\trill ds8 cs4 << cs2.\mordent ~ \\ s2. >> |
+	<<{cs8 a' a gs gs fs fs2. ~} \\ {s8 cs cs b b a a2. ~}>> |
+	<<{fs'8 b b a a gs gs b b es, es gs} \\ {a, d d cs cs b b d d gs, gs b}>> |
+	<<{gs'8 b, b d d4 ~ d} \\ {bs8 es, es es es4 ~ es}>> cs'8 b a gs |
+	a cs gs' es fs4 ~ fs8 b gs4.\prall fs8 |
+	fs2. ~ fs2 r4 |
 	}
 
 mvtI_kbd_up = \relative c'' {
@@ -76,6 +81,11 @@ mvtI_kbd_up = \relative c'' {
 	<<{a4 r r r r8 fs' e fs} \\ {fs,4. a8 gs a fs2. ~}>> |
 	<<{d'4. cs8 fs4 ~ fs8 e d cs b a} \\ {fs4. a8 gs a b4 fs2}>> |
 	<<{gs2. a4. cs8 fs es} \\ {r8 gs,, cs ds fs es fs2 ~ fs8 gs}>> |
+	<<{fs'4 r r r8 fs fs e e d} \\ {a4 r r r8 a a cs cs fs,}>> |
+	<<{d'4 fs8 es fs4 ~ fs d b} \\ {fs2 a4 b es, gs}>> |
+	<<{gs4 b2 ~ b4 a8 gs cs4 ~} \\ {cs,4. gs'8 fs gs es2 r8 b'}>> |
+	<<{cs8 fs es gs fs4 ~ fs16 es fs gs es4. fs8} \\ {a,4 b r8 d cs2 b4}>>
+	<<{fs'2. ~ fs8 a a g g fs} \\ {a,2. ~ a8 c c b b a }>>
 	}
 
 mvtI_kbd_dn = \relative c {
@@ -99,6 +109,11 @@ mvtI_kbd_dn = \relative c {
 	\clef bass
 	b,4 r r gs a b |
 	cs8 es gs cs b cs a, cs fs a gs a |
+	a2 cs4 d gs, b |
+	es,8 fs gs b a b c,4 r es |
+	fs d b cs2 c,4 |
+	fs8 a cs fs e fs e,4 r r |
+	ds8 fs b ds cs ds b,4 r r |
 	}
 
 \score {
