@@ -60,6 +60,14 @@ mvtI_vln = \relative c'' {
 	<<{gs'8 b, b d d4 ~ d} \\ {bs8 es, es es es4 ~ es}>> cs'8 b a gs |
 	a cs gs' es fs4 ~ fs8 b gs4.\prall fs8 |
 	fs2. ~ fs2 r4 |
+	<<{a2. ~ a8 g g fs fs g} \\ {c,2. ~ c8 b b a a b}>> |
+	<<{g'2. ~ g2. ~} \\ {b,2. e2. ~}>> |
+	<<{g8 fs fs e e g g fs fs e e d} \\ {e d d cs cs e e d d cs cs fs,}>> |
+	<<{d'2. ~ d ~} \\ {fs,2. ~ fs ~}>> |
+	<<{d'8 cs e d g fs e d cs e as, b} \\ {fs e g fs b a g fs e4 r}>> |
+	as4. gs8 fs4 <<{fs2. ~} \\ s2.>> |
+	<<{fs8 d' d cs cs b b2. ~} \\ {s8 fs fs e e d d2.}>> |
+	<<{b'8 e e d d cs cs e e as, as cs} \\ {d,8 g g fs fs e e g g cs, cs e}>> |
 	}
 
 mvtI_kbd_up = \relative c'' {
@@ -84,8 +92,16 @@ mvtI_kbd_up = \relative c'' {
 	<<{fs'4 r r r8 fs fs e e d} \\ {a4 r r r8 a a cs cs fs,}>> |
 	<<{d'4 fs8 es fs4 ~ fs d b} \\ {fs2 a4 b es, gs}>> |
 	<<{gs4 b2 ~ b4 a8 gs cs4 ~} \\ {cs,4. gs'8 fs gs es2 r8 b'}>> |
-	<<{cs8 fs es gs fs4 ~ fs16 es fs gs es4. fs8} \\ {a,4 b r8 d cs2 b4}>>
-	<<{fs'2. ~ fs8 a a g g fs} \\ {a,2. ~ a8 c c b b a }>>
+	<<{cs8 fs es gs fs4 ~ fs16 es fs gs es4. fs8} \\ {a,4 b r8 d cs2 b4}>> |
+	<<{fs'2. ~ fs8 a a g g fs} \\ {a,2. ~ a8 c c b b a }>> |
+	<<{fs'4. fs8 e fs ds4 e8 fs ds e} \\ {a,4 fs2 ~ fs4 g a}>> |
+	<<{e'4. g8 fs g e d cs2 ~} \\ {g2. ~ g4. e8 d e}>> |
+	<<{cs'4 b cs as b cs} \\ {cs, d e cs d e}>> |
+	<<{d' r r r r8 b' a b} \\ {fs,4. d'8 cs d b2. ~}>> |
+	<<{g'4 e4. d8 cs b as b cs d} \\ {b4 r r cs,8 d e4 cs' ~}>> |
+	<<{e4. d8 e cs fs4. fs8 e fs} \\ {cs8 b as2 b8 cs d4 as}>> |
+	<<{d4 r r r8 b b a a g} \\ {b4 r r r8 d, d fs fs b,}>> |
+	<<{g'4 b8 as b4 ~ b g e} \\ {b2 d4 e as, cs}>> |
 	}
 
 mvtI_kbd_dn = \relative c {
@@ -114,6 +130,14 @@ mvtI_kbd_dn = \relative c {
 	fs d b cs2 c,4 |
 	fs8 a cs fs e fs e,4 r r |
 	ds8 fs b ds cs ds b,4 r r |
+	ds8 fs b ds cs ds b,4 r r |
+	e'8 g b e d e cs, e as cs b cs |
+	as,4 r r fs r r |
+	b8 d fs b a b g, b d g fs g |
+	e,4 r r e'8 fs fs g g fs |
+	fs as cs fs e fs d, fs b d cs d |
+	b,4 r r r8 g' g fs fs e |
+	e2 fs4 g cs, e |
 	}
 
 \score {
