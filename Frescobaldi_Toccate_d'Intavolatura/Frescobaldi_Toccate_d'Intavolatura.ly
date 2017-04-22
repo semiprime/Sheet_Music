@@ -43,7 +43,6 @@
 
 CorrI_upst = \relative c'' {
 	\clef treble
-	\key c \major
 	\time 3/4
 	r2 a4 | a4. \autoBeamOff g8 f g \autoBeamOn |
 	e4. d8 <<e4 \\ cs>>| \override Stem.direction=#UP f8 g a b c4 |
@@ -64,7 +63,6 @@ CorrI_upst = \relative c'' {
 
 CorrI_downst = \relative c' {
 	\clef bass
-	\key c \major
 	R2. | << {r4 d ~ d } \\ {s2 d,4}>> |
 	<<cs'2 \\ a>> a,4 | <<a'2 \\ f d>> <<a'4 \\ e c>> |
 	<<f2 \\ d bf>> <<f'4 \\ a,>> | g2 f4 |
@@ -102,6 +100,70 @@ CorrI_downst = \relative c' {
 		\override Staff.Rest.style = #'classical
 		\override Script.padding = #0.2
 		\CorrI_downst
+		}
+	>>
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Corrente Seconda  %%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+CorrII_upst = \relative c'' {
+	\clef treble
+	\time 3/4
+	r2 e4 | e4. d16 c b4 |
+	<<{c2 b4} \\ {a2 g4 ~ }>> | <<a \\ g>> g <<a \\ fs>> |
+	b g g' | g4. f16 e d4 |
+	<<{e2 s4} \\ {r4 e, fs}>> | gs2 a4 |
+	r b cs | d2 e,4 |
+	fs gs a | <<{b2 b4} \\ {a2 gs4}>> |
+	<<cs2 \\ a>> \bar ":|.|:" e'4 | e4. d16 c b4 |
+	c4 d8 e f e | <<d2. \\ b>> |
+	d4 g f | <<{e2 d4} \\ {c2 b4~}>> |
+	<<{c4 d c} \\ {b4 a2}>> | <<{b2 a4} \\ {g2 f4~}>> |
+	<<{g4 a g} \\ {f4 e2~}>> | <<{f4 g f} \\ {e4 d2~}>> |
+	<<{e4 f e} \\ {d4 c2}>> |
+	}
+
+CorrII_downst = \relative c'' {
+	\clef bass
+	R2. | \clef alto r4 a gs |
+	r a, b | c2 d4 |
+	<<d2. \\ b g>> | \clef bass <<{c2 g4} \\ {r4 c, b}>> |
+	<< g'2 \\ c, >> d4 | <<{r4 b' a} \\ {e2 fs4}>> |
+	<<b2 \\ gs>> a4 | <<{b2 s4} \\ {r4 b, cs}>> |
+	<<{a'2 s4} \\ {d,4 e f}>> | e d e |
+	<<{a2 ~ a4} \\ {a,2 ~ a4}>> | <<e''2 ~ \\ c a>> <<e'4 \\ gs,>> |
+	<<{e'2 d4} \\ {a2 f4}>> | <<d'2 \\ g,>> g,4 |
+	<<d''2. \\ b g>> | <<{c2 s4} \\ {r4 c, d}>> |
+	e2 fs4 | <<{g2 s4} \\ {r4 g, a}>> |
+	b2 cs4 | d2 d,4 |
+	e2 f4 |
+	}
+
+
+\score {
+	\header {
+		title = \markup {\medium "Corrente Seconda" }
+		composer = ##f
+		subtitle = ##f
+	}
+	\new PianoStaff <<
+	\new Staff = "up" {
+		#(set-accidental-style 'forget)
+		\override Staff.TimeSignature.style = #'single-digit
+		\override Staff.Rest.style = #'classical
+		\override Script.padding = #0.55
+		\CorrII_upst
+		}
+	\new Staff = "down" {
+		#(set-accidental-style 'forget)
+		\override Staff.TimeSignature.style = #'single-digit
+		\override Staff.Rest.style = #'classical
+		\override Script.padding = #0.2
+		\CorrII_downst
 		}
 	>>
 }
