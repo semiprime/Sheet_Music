@@ -4,9 +4,12 @@
 #(set-default-paper-size "a4")
 
 \paper {
-	top-margin = .8\cm
-	bottom-margin = 0.8\cm
-	max-systems-per-page = 7
+	top-margin = .9\cm
+	bottom-margin = .8\cm
+	%system-count = #6
+	max-systems-per-page = 6
+	ragged-bottom = ##t
+	system-system-spacing #'basic-distance = #13
 	print-all-headers = ##t
 
 	% Page numbers bottom, centered
@@ -91,6 +94,7 @@ CorrI_downst = \relative c' {
 		#(set-accidental-style 'forget)
 		\override Staff.TimeSignature.style = #'single-digit
 		\override Staff.Rest.style = #'classical
+		\override Staff.NoteHead.style = #'baroque
 		\override Script.padding = #0.55
 		\CorrI_upst
 		}
@@ -98,6 +102,7 @@ CorrI_downst = \relative c' {
 		#(set-accidental-style 'forget)
 		\override Staff.TimeSignature.style = #'single-digit
 		\override Staff.Rest.style = #'classical
+		\override Staff.NoteHead.style = #'baroque
 		\override Script.padding = #0.2
 		\CorrI_downst
 		}
@@ -105,6 +110,7 @@ CorrI_downst = \relative c' {
 }
 
 
+\pageBreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%  Corrente Seconda  %%
@@ -119,12 +125,25 @@ CorrII_upst = \relative c'' {
 	<<{e2 s4} \\ {r4 e, fs}>> | gs2 a4 |
 	r b cs | d2 e,4 |
 	fs gs a | <<{b2 b4} \\ {a2 gs4}>> |
-	<<cs2 \\ a>> \bar ":|.|:" e'4 | e4. d16 c b4 |
+	<<cs2 \\ a>> \bar ":|." e'4 | e4. d16 c b4 |
 	c4 d8 e f e | <<d2. \\ b>> |
 	d4 g f | <<{e2 d4} \\ {c2 b4~}>> |
 	<<{c4 d c} \\ {b4 a2}>> | <<{b2 a4} \\ {g2 f4~}>> |
 	<<{g4 a g} \\ {f4 e2~}>> | <<{f4 g f} \\ {e4 d2~}>> |
-	<<{e4 f e} \\ {d4 c2}>> |
+	<<{e4 f e} \\ {d4 c2}>> | <<{d2 d4} \\ {c2 b4}>> |
+	<<{e2 g4} \\ {c,2 s4}>> | g'4. a16 b c4 |
+	b4. a8 gs4 | <<{a2 g4} \\ {f2 s4}>> |
+	f4 e d | e2 fs4 |
+	<<{r4 d'2} \\ {g,4 ~ g r}>> | c4 d c |
+	<<b2. \\ {g4 d e}>> | <<a2. \\ f>> |
+	g2 g'4 | f g f |
+	e f e | d2. |
+	c4 d c | b2 e,4 |
+	fs4. g8 a4 | b4. c8 d4 |
+	c b a | <<{e'2 e4} \\ {gs,2 a4}>> |
+	<<{fs'2 gs4} \\ {a,2 b4}>> | <<{a'2 s4} \\ {cs,2 a4}>> |
+	<<{b2 b4} \\ {a2 gs4}>> | <<cs\breve*3/8\fermata \\ a>>
+	\bar "|."
 	}
 
 CorrII_downst = \relative c'' {
@@ -140,7 +159,19 @@ CorrII_downst = \relative c'' {
 	<<d''2. \\ b g>> | <<{c2 s4} \\ {r4 c, d}>> |
 	e2 fs4 | <<{g2 s4} \\ {r4 g, a}>> |
 	b2 cs4 | d2 d,4 |
-	e2 f4 |
+	e2 f4 | g f g |
+	<<c2. \\ c,>> | <<g''2 \\ e  c>> <<a'4 \\ a,>> |
+	<<b'2 \\ gs  e>> <<b'4 \\ e,>> | f8 g a b << c4 \\ e,>> |
+	<<{c'2 b4} \\ {d,2 g4}>> | c,4 c'2 |
+	<<{s2 d4} \\ {b2 ~ b4}>> | <<{e2 fs4} \\ {a,2 ~ a4}>> |
+	r2 g4 | f g f |
+	<<{c'2 ~ c4} \\ {e,4 f e}>> | <<{c'2 bs4} \\ {d,2 d4}>> |
+	<<{c'2 c4} \\ {g2 ~ g4} {c,2 ~ c4}>> | <<{b'4 c b} \\ {g2 ~ g4}>> |
+	<<{a2 ~ a4} \\ {s2 a,4}>> | <<b'2 \\ gs e>> cs4 |
+	<<{a'2 a4} \\ {d,2 c4}>> | <<a'2 \\ b,>> gs'4 |
+	<<{a4 g} \\ e2 a,>> f'4 | e4 d cs |
+	d c b | a g f |
+	e d e | <<a'\breve*3/8 \\ a,\fermata>>
 	}
 
 
@@ -155,6 +186,7 @@ CorrII_downst = \relative c'' {
 		#(set-accidental-style 'forget)
 		\override Staff.TimeSignature.style = #'single-digit
 		\override Staff.Rest.style = #'classical
+		\override Staff.NoteHead.style = #'baroque
 		\override Script.padding = #0.55
 		\CorrII_upst
 		}
@@ -162,6 +194,7 @@ CorrII_downst = \relative c'' {
 		#(set-accidental-style 'forget)
 		\override Staff.TimeSignature.style = #'single-digit
 		\override Staff.Rest.style = #'classical
+		\override Staff.NoteHead.style = #'baroque
 		\override Script.padding = #0.2
 		\CorrII_downst
 		}
