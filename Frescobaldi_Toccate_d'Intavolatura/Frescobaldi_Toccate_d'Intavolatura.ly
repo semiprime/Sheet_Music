@@ -44,19 +44,25 @@
 %%  Corrente Prima  %%
 %%%%%%%%%%%%%%%%%%%%%%
 
+% Notes:
+%
+%   Bars 2,13: The separation of the groups of three eighth-notes in
+%   the original has been preserved.
+%
+
 CorrI_upst = \relative c'' {
 	\clef treble
 	\time 3/4
 	r2 a4 | a4. \autoBeamOff g8 f g \autoBeamOn |
 	e4. d8 <<e4 \\ cs>>| \override Stem.direction=#UP f8 g a b c4 |
 	d e f \revert Stem.directon | <<{bf,2 a4} \\ {d, e f}>> |
-	<< g2. \\ e>> | << {g4 a} \\ e2>> f4 |
+	<< g2. \\ e>> | \break << {g4 a} \\ e2>> f4 |
 	<<e2 \\ cs>> d4 | e8 f g f <<e4 \\cs >> |
 	d2 \bar ":|.|:" a'4 | a2 b4 |
-	c4. \autoBeamOff b8 c d \autoBeamOn | b4. a8 <<b4 \\ gs>> |
+	c4. \autoBeamOff b8 c d \autoBeamOn | \break b4. a8 <<b4 \\ gs>> |
 	a8 g a b c4 | d e f |
 	<<{e2 e4} \\ {r4 g, ~ g}>> | <<{d'2 e4} \\ {g,2 ~ g4}>> |
-	<<{c2 c4} \\ {e,2 fs4}>> | <<{b2 s4} \\ {g4 a b}>> |
+	<<{c2 c4} \\ {e,2 fs4}>> | <<{b2 s4} \\ {g4 a b}>> | \break
 	<<{a2 a4} \\ {f2 f4}>> | g2 a4 |
 	<<{f2 g4} \\ {d2 s4}>> | <<{r4 a' b} \\ {c,2 s4}>> |
 	cs'4 a d | e8 f g f <<e4 \\ cs>> |
@@ -70,7 +76,7 @@ CorrI_downst = \relative c' {
 	<<cs'2 \\ a>> a,4 | <<a'2 \\ f d>> <<a'4 \\ e c>> |
 	<<f2 \\ d bf>> <<f'4 \\ a,>> | g2 f4 |
 	c'2 c,4 | <<c''2 \\ c,>> d4 |
-	<<{r a'4 f} \\ {a,2 bf4}>> | <<g'2 \\ g,>> <<a'4 \\ e \\ \override Stem.direction=#DOWN a,\revert Stem.directon >> |
+	<<{r a'4 f} \\ {a,2 bf4}>> | <<g'2 \\ g,>> <<a'4 \\ e a,>> |
 	<<{d2 ~ d4} \\ {d,2 ~ d4}>> | r4 d''2 |
 	<<{e2 fs4} \\ {r4 a, ~ a}>> | <<gs'2 \\ e>> e,4 |
 	<<c'2 \\ a f>> <<c'4 ~ \\ g e>> | <<c'2 \\ d, ~>> <<b'4 \\ d,>> |
@@ -116,29 +122,49 @@ CorrI_downst = \relative c' {
 %%  Corrente Seconda  %%
 %%%%%%%%%%%%%%%%%%%%%%%%
 
+% Notes:
+%
+%   Bars 1-5: No change of clef is required in the original publication
+%   since the left hand is written on 8 lines extending up to the G
+%   above middle-C. For this transcription, the alto-clef was used as
+%   it is reasonably familiar and it corresponds to the top section of
+%   the original staff (top line is the G above middle-C).
+%
+%   Bar 25: There is a mark attached to the stem of the E which could
+%   be a partially written G. However, in this notation chords
+%   typically have a stem on each note head, rather than one for the
+%   whole chord as in modern notation (see, for example, Corrente
+%   Terza, bar 23, RH). Therefore the possibility of this G being
+%   present has been rejected for this transcription.
+%
+%   Bar 36: B natural marked as B sharp in the original.  This
+%   corresponds to the notational convention of the time in which a
+%   sharp, rather than a natural, cancelled a flat.
+%
+
 CorrII_upst = \relative c'' {
 	\clef treble
 	\time 3/4
 	r2 e4 | e4. d16 c b4 |
 	<<{c2 b4} \\ {a2 g4 ~ }>> | <<a \\ g>> g <<a \\ fs>> |
 	b g g' | g4. f16 e d4 |
-	<<{e2 s4} \\ {r4 e, fs}>> | gs2 a4 |
+	<<{e2 s4} \\ {r4 e, fs}>> | gs2 a4 | \break
 	r b cs | d2 e,4 |
 	fs gs a | <<{b2 b4} \\ {a2 gs4}>> |
 	<<cs2 \\ a>> \bar ":|." e'4 | e4. d16 c b4 |
-	c4 d8 e f e | <<d2. \\ b>> |
+	c4 d8 e f e | <<d2. \\ b>> | \break
 	d4 g f | <<{e2 d4} \\ {c2 b4~}>> |
 	<<{c4 d c} \\ {b4 a2}>> | <<{b2 a4} \\ {g2 f4~}>> |
 	<<{g4 a g} \\ {f4 e2~}>> | <<{f4 g f} \\ {e4 d2~}>> |
-	<<{e4 f e} \\ {d4 c2}>> | <<{d2 d4} \\ {c2 b4}>> |
+	<<{e4 f e} \\ {d4 c2}>> | <<{d2 d4} \\ {c2 b4}>> | \break
 	<<{e2 g4} \\ {c,2 s4}>> | g'4. a16 b c4 |
 	b4. a8 gs4 | <<{a2 g4} \\ {f2 s4}>> |
 	f4 e d | e2 fs4 |
-	<<{r4 d'2} \\ {g,4 ~ g r}>> | c4 d c |
+	<<{r4 d'2} \\ {g,4 ~ g r}>> | c4 d c | \break
 	<<b2. \\ {g4 d e}>> | <<a2. \\ f>> |
 	g2 g'4 | f g f |
 	e f e | d2. |
-	c4 d c | b2 e,4 |
+	c4 d c | b2 e,4 | \break
 	fs4. g8 a4 | b4. c8 d4 |
 	c b a | <<{e'2 e4} \\ {gs,2 a4}>> |
 	<<{fs'2 gs4} \\ {a,2 b4}>> | <<{a'2 s4} \\ {cs,2 a4}>> |
@@ -165,7 +191,7 @@ CorrII_downst = \relative c'' {
 	<<{c'2 b4} \\ {d,2 g4}>> | c,4 c'2 |
 	<<{s2 d4} \\ {b2 ~ b4}>> | <<{e2 fs4} \\ {a,2 ~ a4}>> |
 	r2 g4 | f g f |
-	<<{c'2 ~ c4} \\ {e,4 f e}>> | <<{c'2 bs4} \\ {d,2 d4}>> |
+	<<{c'2 ~ c4} \\ {e,4 f e}>> | <<{c'2 b!4} \\ {d,2 d4}>> |
 	<<{c'2 c4} \\ {g2 ~ g4} {c,2 ~ c4}>> | <<{b'4 c b} \\ {g2 ~ g4}>> |
 	<<{a2 ~ a4} \\ {s2 a,4}>> | <<b'2 \\ gs e>> cs4 |
 	<<{a'2 a4} \\ {d,2 c4}>> | <<a'2 \\ b,>> gs'4 |
