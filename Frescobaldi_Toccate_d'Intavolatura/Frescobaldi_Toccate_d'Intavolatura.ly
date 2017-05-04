@@ -227,3 +227,73 @@ CorrII_downst = \relative c'' {
 	>>
 }
 
+
+\pageBreak
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%  Corrente Terza  %%
+%%%%%%%%%%%%%%%%%%%%%%
+
+CorrIII_upst = \relative c'' {
+	\clef treble
+	\key f \major
+	\time 3/4
+	c2 c4 | c4. d16 e f4 |
+	e4. d8 c4 | f8 e f g a bf |
+	g4. a8 f4 | << {e4 ~ e f} \\ {r4 c2}>> |
+	g'8 f e f g e | f4. g8 ef4 |
+	d2 c4 | b g c |
+	f8 e d c d[ e] | <<c2. \\ g e>> |
+	\bar ":|."
+	a'4 bf8  a g f | g4 a8 g f e |
+	f4 d8 e f d | g4. a8 g4 |
+	a2 c,4 | b g8 a b! g |
+	c4. d8 c4 | d4. e8 f4 |
+	<<{e2 f4} \\ {r4 c ~ c}>> | g'8 f e f g e |
+	<<f2. \\ c a>> | c8 d e f g4 |
+	}
+
+CorrIII_downst = \relative c' {
+	\clef bass
+	\key f \major
+	<<c2. \\ a f>> | <<c'2 \\ a f>> <<b4 \\ d,>> |
+	<<c'2. \\ g c,>> | <<f2. \\ c f,>> |
+	<<c'2 \\ e,>> <<f'4 \\ c f,>> | << g'2. \\ {c,2 d4}>> |
+	<<c'2 \\ g e>> <<c'4 \\ g c,>> | <<c'2 \\ a f>> <<c'4 \\ s>> |
+	<<d2 \\ b g>> <<c4 \\ a>> | <<d2 \\ g,>> <<c4 \\ g e>> |
+	<<d'2 \\ a f>> <<d'4 \\ b g>> | <<c2. \\ g c,>> |
+	<<c'2. \\ a f>> | <<c'2. \\ g c,>> |
+	<<a'2 \\ f d~>> <<b'4 \\ d,>> | <<b'2 \\ g e~>> <<c'4 \\ e,>> |
+	<<{c'2~ c4} \\ {f,4. g8 a4}>> | <<d2 \\ b~ g~>> <<e'4 \\ b g>> |
+	<<{e'2 f4} \\ {a,2 a4}>> | <<{f'2 f4} \\ {bf,2 d4}>> |
+	<<{g2 a4} \\ {c,2 a4}>> | <<{g'2 ~ g4} \\ {bf,4 c ~ c}>> |
+	<<f2. ~ \\ c ~ f, ~ >> | <<f'2 \\ c f,>> <<r4 \\ r \\ r >> |
+	}
+
+
+\score {
+	\header {
+		title = \markup {\medium "Corrente Terza" }
+		composer = ##f
+		subtitle = ##f
+	}
+	\new PianoStaff <<
+	\new Staff = "up" {
+		#(set-accidental-style 'forget)
+		\override Staff.TimeSignature.style = #'single-digit
+		\override Staff.Rest.style = #'classical
+		\override Staff.NoteHead.style = #'baroque
+		\override Script.padding = #0.55
+		\CorrIII_upst
+		}
+	\new Staff = "down" {
+		#(set-accidental-style 'forget)
+		\override Staff.TimeSignature.style = #'single-digit
+		\override Staff.Rest.style = #'classical
+		\override Staff.NoteHead.style = #'baroque
+		\override Script.padding = #0.2
+		\CorrIII_downst
+		}
+	>>
+}
+
