@@ -234,6 +234,14 @@ CorrII_downst = \relative c'' {
 %%  Corrente Terza  %%
 %%%%%%%%%%%%%%%%%%%%%%
 
+% Notes:
+%
+%   Bars 2,9,10,11,15,16,18: The B-naturals are marked with sharp
+%   signs in the original.
+%
+%   Bar 26: The E-sharp in the original is transcribed as an E-natural.
+%
+
 CorrIII_upst = \relative c'' {
 	\clef treble
 	\key f \major
@@ -251,6 +259,14 @@ CorrIII_upst = \relative c'' {
 	c4. d8 c4 | d4. e8 f4 |
 	<<{e2 f4} \\ {r4 c ~ c}>> | g'8 f e f g e |
 	<<f2. \\ c a>> | c8 d e f g4 |
+	e c f | d bf e! |
+	c a d | bf2 <<a4 \\ f>> |
+	<<{g2 g4} \\ {e4. f8 e4}>> | <<{a2 g4} \\ {f2 e4}>> |
+	f8 g a bf c4 | d2 bf4 |
+	c2 a4 | bf g c |
+	a g f | <<{g2 g4} \\ {f2 e4}>> |
+	<<a\breve*3/8\fermata \\ f>>
+	\bar "|."
 	}
 
 CorrIII_downst = \relative c' {
@@ -268,6 +284,13 @@ CorrIII_downst = \relative c' {
 	<<{e'2 f4} \\ {a,2 a4}>> | <<{f'2 f4} \\ {bf,2 d4}>> |
 	<<{g2 a4} \\ {c,2 a4}>> | <<{g'2 ~ g4} \\ {bf,4 c ~ c}>> |
 	<<f2. ~ \\ c ~ f, ~ >> | <<f'2 \\ c f,>> <<r4 \\ r \\ r >> |
+	<<{g'4 a ~ a} \\ {c,2 a4}>> | <<{f'4 g ~ g} \\ {bf,2 g4}>> |
+	<<{e'4 f ~ f} \\ {a,2 f4}>> | <<{d'4 e s} \\{g,2 f4}>> |
+	c'2 <<c4 \\ c,>> | f,8 g a bf c4 |
+	<<a'2 \\ f d>> <<a'4 \\ c,>> | <<{f4 d g} \\ {bf,2 g4}>> |
+	<<{e'4 c f} \\ {a,2 f4}>> | <<{d'4 e ~ e} \\ {g,2 e4}>> |
+	<<f'2 ~\\ c f,>> <<f'4 \\ a,>> | bf4 c c, |
+	<<f'\breve*3/8 \\ f,\fermata>> |
 	}
 
 
