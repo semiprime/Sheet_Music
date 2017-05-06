@@ -32,6 +32,22 @@
 }
 
 
+% Commands for combined mensural/digial time signatures
+% Modified from http://lsr.di.unimi.it/LSR/Snippet?id=725
+#(define ((double-time-signature glyph a b) grob)
+   (grob-interpret-markup grob
+          (markup #:override '(baseline-skip . 1.8) #:number
+                  (#:line ((markup (#:fontsize 1 #:musicglyph glyph))
+                           (#:fontsize 0 #:column (a b)))))))
+
+% Variant for single digit
+#(define ((double-time-signature-single glyph a) grob)
+   (grob-interpret-markup grob
+          (markup #:number
+                  (#:line ((markup (#:fontsize 1 #:musicglyph glyph))
+                           #:vcenter (#:fontsize 0 a))))))
+
+
 % Global title
 \header {
 	title = "Toccate d'Intavolatura di Cembalo et Organo (1637)"
@@ -53,6 +69,7 @@
 CorrI_upst = \relative c'' {
 	\clef treble
 	\time 3/4
+	\once \override Score.TimeSignature.stencil = #(double-time-signature-single "timesig.neomensural64" "3")
 	r2 a4 | a4. \autoBeamOff g8 f g \autoBeamOn |
 	e4. d8 <<e4 \\ cs>>| \override Stem.direction=#UP f8 g a b c4 |
 	d e f \revert Stem.directon | <<{bf,2 a4} \\ {d, e f}>> |
@@ -98,7 +115,6 @@ CorrI_downst = \relative c' {
 	\new PianoStaff <<
 	\new Staff = "up" {
 		#(set-accidental-style 'forget)
-		\override Staff.TimeSignature.style = #'single-digit
 		\override Staff.Rest.style = #'classical
 		\override Staff.NoteHead.style = #'baroque
 		\override Script.padding = #0.55
@@ -106,7 +122,6 @@ CorrI_downst = \relative c' {
 		}
 	\new Staff = "down" {
 		#(set-accidental-style 'forget)
-		\override Staff.TimeSignature.style = #'single-digit
 		\override Staff.Rest.style = #'classical
 		\override Staff.NoteHead.style = #'baroque
 		\override Script.padding = #0.2
@@ -145,6 +160,7 @@ CorrI_downst = \relative c' {
 CorrII_upst = \relative c'' {
 	\clef treble
 	\time 3/4
+	\once \override Score.TimeSignature.stencil = #(double-time-signature-single "timesig.neomensural64" "3")
 	r2 e4 | e4. d16 c b4 |
 	<<{c2 b4} \\ {a2 g4 ~ }>> | <<a \\ g>> g <<a \\ fs>> |
 	b g g' | g4. f16 e d4 |
@@ -210,7 +226,6 @@ CorrII_downst = \relative c'' {
 	\new PianoStaff <<
 	\new Staff = "up" {
 		#(set-accidental-style 'forget)
-		\override Staff.TimeSignature.style = #'single-digit
 		\override Staff.Rest.style = #'classical
 		\override Staff.NoteHead.style = #'baroque
 		\override Script.padding = #0.55
@@ -218,7 +233,6 @@ CorrII_downst = \relative c'' {
 		}
 	\new Staff = "down" {
 		#(set-accidental-style 'forget)
-		\override Staff.TimeSignature.style = #'single-digit
 		\override Staff.Rest.style = #'classical
 		\override Staff.NoteHead.style = #'baroque
 		\override Script.padding = #0.2
@@ -239,6 +253,8 @@ CorrII_downst = \relative c'' {
 %   Bars 2,9,10,11,15,16,18: The B-naturals are marked with sharp
 %   signs in the original.
 %
+%   Bar 11: The grouping of the eighth-notes follows the original.
+%
 %   Bar 26: The E-sharp in the original is transcribed as an E-natural.
 %
 
@@ -246,6 +262,7 @@ CorrIII_upst = \relative c'' {
 	\clef treble
 	\key f \major
 	\time 3/4
+	\once \override Score.TimeSignature.stencil = #(double-time-signature  "timesig.neomensural44" "3" "2")
 	c2 c4 | c4. d16 e f4 |
 	e4. d8 c4 | f8 e f g a bf |
 	g4. a8 f4 | << {e4 ~ e f} \\ {r4 c2}>> |
@@ -303,7 +320,6 @@ CorrIII_downst = \relative c' {
 	\new PianoStaff <<
 	\new Staff = "up" {
 		#(set-accidental-style 'forget)
-		\override Staff.TimeSignature.style = #'single-digit
 		\override Staff.Rest.style = #'classical
 		\override Staff.NoteHead.style = #'baroque
 		\override Script.padding = #0.55
@@ -311,7 +327,6 @@ CorrIII_downst = \relative c' {
 		}
 	\new Staff = "down" {
 		#(set-accidental-style 'forget)
-		\override Staff.TimeSignature.style = #'single-digit
 		\override Staff.Rest.style = #'classical
 		\override Staff.NoteHead.style = #'baroque
 		\override Script.padding = #0.2
