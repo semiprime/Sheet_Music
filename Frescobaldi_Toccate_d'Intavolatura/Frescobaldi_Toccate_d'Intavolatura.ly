@@ -48,6 +48,13 @@
                            #:vcenter (#:fontsize 0 a))))))
 
 
+% markuplist command
+% From http://lilypond.org/doc/v2.18/Documentation/snippets/text
+#(define-markup-list-command (paragraph layout props args) (markup-list?)
+  (interpret-markup-list layout props
+   (make-justified-lines-markup-list (cons (make-hspace-markup 2) args))))
+
+
 % Global title
 \header {
 	title = "Toccate d'Intavolatura di Cembalo et Organo (1637)"
@@ -59,12 +66,6 @@
 %%%%%%%%%%%%%%%%%%%%%%
 %%  Corrente Prima  %%
 %%%%%%%%%%%%%%%%%%%%%%
-
-% Notes:
-%
-%   Bars 2,13: The separation of the groups of three eighth-notes in
-%   the original has been preserved.
-%
 
 CorrI_upst = \relative c'' {
 	\clef treble
@@ -136,26 +137,6 @@ CorrI_downst = \relative c' {
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%  Corrente Seconda  %%
 %%%%%%%%%%%%%%%%%%%%%%%%
-
-% Notes:
-%
-%   Bars 1-5: No change of clef is required in the original publication
-%   since the left hand is written on 8 lines extending up to the G
-%   above middle-C. For this transcription, the alto-clef was used as
-%   it is reasonably familiar and it corresponds to the top section of
-%   the original staff (top line is the G above middle-C).
-%
-%   Bar 25: There is a mark attached to the stem of the E which could
-%   be a partially written G. However, in this notation chords
-%   typically have a stem on each note head, rather than one for the
-%   whole chord as in modern notation (see, for example, Corrente
-%   Terza, bar 23, RH). Therefore the possibility of this G being
-%   present has been rejected for this transcription.
-%
-%   Bar 36: B natural marked as B sharp in the original.  This
-%   corresponds to the notational convention of the time in which a
-%   sharp, rather than a natural, cancelled a flat.
-%
 
 CorrII_upst = \relative c'' {
 	\clef treble
@@ -248,16 +229,6 @@ CorrII_downst = \relative c'' {
 %%  Corrente Terza  %%
 %%%%%%%%%%%%%%%%%%%%%%
 
-% Notes:
-%
-%   Bars 2,9,10,11,15,16,18: The B-naturals are marked with sharp
-%   signs in the original.
-%
-%   Bar 11: The grouping of the eighth-notes follows the original.
-%
-%   Bar 26: The E-sharp in the original is transcribed as an E-natural.
-%
-
 CorrIII_upst = \relative c'' {
 	\clef treble
 	\key f \major
@@ -335,3 +306,78 @@ CorrIII_downst = \relative c' {
 	>>
 }
 
+\pageBreak
+
+
+%%%%%%%%%%%%%
+%%  Notes  %%
+%%%%%%%%%%%%%
+
+\markup \fontsize #2 \medium "Notes"
+
+\markuplist {
+\vspace #1
+\paragraph {
+	   These pieces have been transcribed from the facsimile of
+	   Frescobaldi’s “Toccate d’Intavolatura di Cimbalo et Organo
+	   … Libro Primo” published by Studio per Edizioni Scelte.
+	   This facsimile is available online at
+	   http://imslp.org/wiki/Toccate_e_partite_d'intavolatura,_Libro_1_%28Frescobaldi,_Girolamo%29
+	   }
+
+\vspace #1
+
+\fontsize #1 \medium "Corrente Prima"
+\vspace #1
+\paragraph {
+	   Bars 2,13:\hspace #0.5 The separation of the eighth-notes
+	   in the original has been preserved.
+	   }
+
+\vspace #1
+
+\fontsize #1 \medium "Corrente Seconda"
+\vspace #1
+\paragraph {
+	Bars 1–5:\hspace #0.5 No change of clef is required in the
+	original publication since the left hand is written on 8 lines
+	extending up to the G above middle-C. For this transcription,
+	the alto clef was used as it is familiar and it corresponds to
+	the top section of the original staff (top line is the G above
+	middle-C).
+	}
+\vspace #0.5
+\paragraph {
+	Bar 25:\hspace #0.5 There is a mark attached to the stem of
+	the E which could be a partially written G. However, in this
+	publication chords typically have a stem on each note head,
+	rather than one for the whole chord as in modern notation
+	(see, for example, Corrente Terza, bar 23, RH). Therefore this
+	possible G has been rejected in this transcription.
+	}
+\vspace #0.5
+\paragraph {
+	Bar 36:\hspace #0.5 B natural marked as B sharp in the
+	original. This follows the notational convention of the time
+	in which a sharp, rather than a natural, cancelled a flat.
+	}
+
+\vspace #1
+
+\fontsize #1 \medium "Corrente Terza"
+\vspace #1
+\paragraph{
+	Bars 2,9,10,11,15,16,18:\hspace #0.5 The B naturals are marked
+	with sharp signs in the original.
+	}
+\vspace #0.5
+\paragraph{
+	Bar 11:\hspace #0.5 The grouping of the eighth-notes follows
+	the original.
+	}
+\vspace #0.5
+\paragraph{
+	Bar 26:\hspace #0.5 The E sharp in the original is transcribed
+	as an E natural.
+	}
+}
