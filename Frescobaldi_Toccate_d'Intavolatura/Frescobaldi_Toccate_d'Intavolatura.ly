@@ -35,29 +35,29 @@
 % Commands for combined mensural/digial time signatures
 % Modified from http://lsr.di.unimi.it/LSR/Snippet?id=725
 #(define ((double-time-signature glyph a b) grob)
-   (grob-interpret-markup grob
-          (markup #:override '(baseline-skip . 1.8) #:number
-                  (#:line ((markup (#:fontsize 1 #:musicglyph glyph))
-                           (#:fontsize 0 #:column (a b)))))))
+	(grob-interpret-markup grob
+		(markup #:override '(baseline-skip . 1.8) #:number
+			(#:line ((markup (#:fontsize 1 #:musicglyph glyph))
+				(#:fontsize 0 #:column (a b)))))))
 
 % Variant for single digit
 #(define ((double-time-signature-single glyph a) grob)
-   (grob-interpret-markup grob
-          (markup #:number
-                  (#:line ((markup (#:fontsize 1 #:musicglyph glyph))
-                           #:vcenter (#:fontsize 0 a))))))
+	(grob-interpret-markup grob
+		(markup #:number
+			(#:line ((markup (#:fontsize 1 #:musicglyph glyph))
+				#:vcenter (#:fontsize 0 a))))))
 
 
 % markuplist command
 % From http://lilypond.org/doc/v2.18/Documentation/snippets/text
 #(define-markup-list-command (paragraph layout props args) (markup-list?)
-  (interpret-markup-list layout props
-   (make-justified-lines-markup-list (cons (make-hspace-markup 2) args))))
+	(interpret-markup-list layout props
+		(make-justified-lines-markup-list (cons (make-hspace-markup 2) args))))
 
 
 % Global title
 \header {
-	title = "Toccate d'Intavolatura di Cembalo et Organo (1637)"
+	title = "Quattro Correnti (Toccate d'Intavolatura)"
 	subtitle = "Girolamo Frescobaldi"
 	composer = " " % To make space below title
 }
@@ -183,8 +183,8 @@ CorrII_downst = \relative c'' {
 	e2 fs4 | <<{g2 s4} \\ {r4 g, a}>> |
 	b2 cs4 | d2 d,4 |
 	e2 f4 | g f g |
-	<<c2. \\ c,>> | <<g''2 \\ e  c>> <<a'4 \\ a,>> |
-	<<b'2 \\ gs  e>> <<b'4 \\ e,>> | f8 g a b << c4 \\ e,>> |
+	<<c2. \\ c,>> | <<g''2 \\ e c>> <<a'4 \\ a,>> |
+	<<b'2 \\ gs e>> <<b'4 \\ e,>> | f8 g a b << c4 \\ e,>> |
 	<<{c'2 b4} \\ {d,2 g4}>> | c,4 c'2 |
 	<<{s2 d4} \\ {b2 ~ b4}>> | <<{e2 fs4} \\ {a,2 ~ a4}>> |
 	r2 g4 | f g f |
@@ -233,7 +233,7 @@ CorrIII_upst = \relative c'' {
 	\clef treble
 	\key f \major
 	\time 3/4
-	\once \override Score.TimeSignature.stencil = #(double-time-signature  "timesig.neomensural44" "3" "2")
+	\once \override Score.TimeSignature.stencil = #(double-time-signature "timesig.neomensural44" "3" "2")
 	c2 c4 | c4. d16 e f4 |
 	e4. d8 c4 | f8 e f g a bf |
 	g4. a8 f4 | << {e4 ~ e f} \\ {r4 c2}>> |
@@ -241,7 +241,7 @@ CorrIII_upst = \relative c'' {
 	d2 c4 | b g c |
 	f8 e d c d[ e] | <<c2. \\ g e>> |
 	\bar ":|."
-	a'4 bf8  a g f | g4 a8 g f e |
+	a'4 bf8 a g f | g4 a8 g f e |
 	f4 d8 e f d | g4. a8 g4 |
 	a2 c,4 | b g8 a b! g |
 	c4. d8 c4 | d4. e8 f4 |
@@ -318,21 +318,27 @@ CorrIII_downst = \relative c' {
 \markuplist {
 \vspace #1
 \paragraph {
-	   These pieces have been transcribed from the facsimile of
-	   Frescobaldi’s “Toccate d’Intavolatura di Cimbalo et Organo
-	   … Libro Primo” published by Studio per Edizioni Scelte.
-	   This facsimile is available online at
-	   http://imslp.org/wiki/Toccate_e_partite_d'intavolatura,_Libro_1_%28Frescobaldi,_Girolamo%29
-	   }
+	These pieces have been transcribed from a facsimile of
+	the 1637 edition of Frescobaldi’s “Toccate d’Intavolatura
+	di Cimbalo et Organo … Libro Primo” published by Studio per
+	Edizioni Scelte. This facsimile is available at
+	http://imslp.org/wiki/Toccate_e_partite_d'intavolatura,_Libro_1_(Frescobaldi,_Girolamo)
+	}
+\paragraph {
+	This transcription aims to be an accurate rendition of the
+	original, within the limits of modern music notation. As such,
+	since the original publication is now in the public domain,
+	this edition is also in the public domain.
+	}
 
 \vspace #1
 
 \fontsize #1 \medium "Corrente Prima"
 \vspace #1
 \paragraph {
-	   Bars 2,13:\hspace #0.5 The separation of the eighth-notes
-	   in the original has been preserved.
-	   }
+	Bars 2, 13:\hspace #0.5 The separation of the eighth-notes in
+	the original has been preserved.
+	}
 
 \vspace #1
 
@@ -367,8 +373,8 @@ CorrIII_downst = \relative c' {
 \fontsize #1 \medium "Corrente Terza"
 \vspace #1
 \paragraph{
-	Bars 2,9,10,11,15,16,18:\hspace #0.5 The B naturals are marked
-	with sharp signs in the original.
+	Bars 2, 9, 10, 11, 15, 16, 18:\hspace #0.5 The B naturals are
+	marked with sharp signs in the original.
 	}
 \vspace #0.5
 \paragraph{
