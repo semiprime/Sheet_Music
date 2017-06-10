@@ -43,8 +43,7 @@
 %%  Ricercare del Settimo Tuono  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Ric_Settimo_I = \relative c'' {
-	\clef treble
+Ric_Settimo_I = {
 	\key c \major
 	\time 4/4 % Displayed time signature
 	\override Staff.TimeSignature.style = #'neomensural
@@ -69,7 +68,7 @@ Ric_Settimo_I = \relative c'' {
 	b8 a b c b4 c d c8 b a2 |
 	b1
 	\override Staff.TimeSignature.style = #'single-digit
-	\time 3/4 \bar ":|.|:"
+	\time 3/1 \bar ":|.|:"
 	\set Timing.measureLength = #(ly:make-moment 6/1) % Effective time sig
 	\set Timing.measurePosition = #(ly:make-moment -3/1) % Anacrusis
 	b1. b2 a1 |
@@ -80,8 +79,7 @@ Ric_Settimo_I = \relative c'' {
 	\bar ":|."
 	}
 
-Ric_Settimo_II = \relative c' {
-	\clef mezzosoprano
+Ric_Settimo_II = {
 	\key c \major
 	\override Staff.TimeSignature.style = #'neomensural
 	r1 d2 d4 d |
@@ -112,8 +110,7 @@ Ric_Settimo_II = \relative c' {
 	g\breve fs1 g\longa*1/2
 	}
 
-Ric_Settimo_III = \relative c' {
-	\clef alto
+Ric_Settimo_III = {
 	\key c \major
 	\override Staff.TimeSignature.style = #'neomensural
 	R\breve | R\breve |
@@ -143,8 +140,7 @@ Ric_Settimo_III = \relative c' {
 	g a d d\longa*1/2
 	}
 
-Ric_Settimo_IV = \relative c {
-	\clef tenor
+Ric_Settimo_IV = {
 	\key c \major
 	\override Staff.TimeSignature.style = #'neomensural
 	R\breve | R\breve |
@@ -175,6 +171,10 @@ Ric_Settimo_IV = \relative c {
 	}
 
 
+%
+% Open score (with original clefs)
+%
+
 \score {
 	\header {
 		title = \markup {\medium "Ricercare del Settimo Tuono" }
@@ -183,22 +183,70 @@ Ric_Settimo_IV = \relative c {
 	}
 	<<
 		\set strictBeatBeaming = ##t
-		#(set-accidental-style 'forget)
-		\Ric_Settimo_I
+		\relative c'' {
+			\clef treble
+			\Ric_Settimo_I
+			}
 
 		\new Staff {
-			#(set-accidental-style 'forget)
+			\relative c' {
+				\clef mezzosoprano
+				\Ric_Settimo_II
+				}
+		}
+
+		\new Staff {
+			\relative c' {
+				\clef alto
+				\Ric_Settimo_III
+				}
+		}
+
+		\new Staff {
+			\relative c {
+				\clef tenor
+				\Ric_Settimo_IV
+				}
+		}
+	>>
+}
+
+\pageBreak
+
+%
+% Keyboard score
+%
+
+\score {
+	\header {
+		title = \markup {\medium "Ricercare del Settimo Tuono" }
+		composer = ##f
+		subtitle = ##f
+	}
+	\new PianoStaff <<
+	\new Staff = "up" {
+		\clef treble
+		<<
+		\relative c'' {
+			\Ric_Settimo_I
+			}
+		\\
+		\relative c' {
 			\Ric_Settimo_II
+			}
+		>>
 		}
-
-		\new Staff {
-			#(set-accidental-style 'forget)
+	\new Staff = "down" {
+		\clef bass
+		<<
+		\relative c' {
 			\Ric_Settimo_III
-		}
-
-		\new Staff {
-			#(set-accidental-style 'forget)
+			}
+		\\
+		\relative c {
 			\Ric_Settimo_IV
+			}
+		>>
 		}
 	>>
 }
