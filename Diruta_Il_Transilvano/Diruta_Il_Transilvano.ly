@@ -46,7 +46,9 @@
 Ric_Settimo_I = \relative c'' {
 	\clef treble
 	\key c \major
-	\time 4/2
+	\time 4/4 % Displayed time signature
+	\override Staff.TimeSignature.style = #'neomensural
+	\set Timing.measureLength = #(ly:make-moment 4/2) % Effective time sig
 	g2 g4 g d'8 c d e d4. c8 |
 	b a b c b4 a4 g2. a4 |
 	b c d2 a1 |
@@ -55,7 +57,7 @@ Ric_Settimo_I = \relative c'' {
 	e d e f e4 d g2. f8 e |
 	d2 e r g |
 	f8 e f g f4 e d8 c d e d4 c |
-	b8 a b c  b4 c d c8 b a2 |
+	b8 a b c b4 c d c8 b a2 |
 	b4 g g g d'8 c d e d4. c8 |
 	b a b c b4 a g2. a4 |
 	b4 c d2 a1 |
@@ -66,9 +68,10 @@ Ric_Settimo_I = \relative c'' {
 	f8 e f g f4 e d8 c d e d4 c |
 	b8 a b c b4 c d c8 b a2 |
 	b1
-	\time 6/1 \bar ":|.|:"
-	s\breve
-	%\set Timing.measurePosition = #(ly:make-moment 1 6)
+	\override Staff.TimeSignature.style = #'single-digit
+	\time 3/4 \bar ":|.|:"
+	\set Timing.measureLength = #(ly:make-moment 6/1) % Effective time sig
+	\set Timing.measurePosition = #(ly:make-moment -3/1) % Anacrusis
 	b1. b2 a1 |
 	b1. c2 d1 c1 e1. f2 |
 	g\breve e1 e\breve d1 |
@@ -80,6 +83,7 @@ Ric_Settimo_I = \relative c'' {
 Ric_Settimo_II = \relative c' {
 	\clef mezzosoprano
 	\key c \major
+	\override Staff.TimeSignature.style = #'neomensural
 	r1 d2 d4 d |
 	g8 f g a g4 f e8 d e f e4 d |
 	g2 d4 e f8 e f g f4. e8 |
@@ -99,7 +103,8 @@ Ric_Settimo_II = \relative c' {
 	a1 b |
 	R\breve |
 	r1
-	s\breve
+	% 3 section
+	\override Staff.TimeSignature.style = #'single-digit
 	g1. g2 fs1 |
 	g1. e2 g1 g\breve a1 |
 	b\breve c1 g\breve bf1 |
@@ -110,6 +115,7 @@ Ric_Settimo_II = \relative c' {
 Ric_Settimo_III = \relative c' {
 	\clef alto
 	\key c \major
+	\override Staff.TimeSignature.style = #'neomensural
 	R\breve | R\breve |
 	g2 g4 g d'8 c d e d4. c8 |
 	b a b c b4 a g2. a4 |
@@ -128,7 +134,8 @@ Ric_Settimo_III = \relative c' {
 	f1 g2 g ~ |
 	g4 d g1 f2 |
 	g1
-	s\breve
+	% 3 section
+	\override Staff.TimeSignature.style = #'single-digit
 	d1. d2 d1 |
 	d1. c2 b1 e1. d2 c1 |
 	d\breve e1 e1. f2 g1 |
@@ -139,6 +146,7 @@ Ric_Settimo_III = \relative c' {
 Ric_Settimo_IV = \relative c {
 	\clef tenor
 	\key c \major
+	\override Staff.TimeSignature.style = #'neomensural
 	R\breve | R\breve |
 	r1 d2 d4 d |
 	g8 f g a g4 f e8 d e f e4 d |
@@ -157,7 +165,8 @@ Ric_Settimo_IV = \relative c {
 	d'8 c d e d4 c b8 a b c b4 a |
 	g2. a4 b c d2 |
 	g,1
-	s\breve
+	% 3 section
+	\override Staff.TimeSignature.style = #'single-digit
 	g1. g2 d1 |
 	g1. a2 b1 c1. b2 a1 |
 	g\breve c1 c\breve g1 |
