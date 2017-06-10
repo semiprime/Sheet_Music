@@ -81,7 +81,9 @@ Ric_Settimo_I = {
 
 Ric_Settimo_II = {
 	\key c \major
+	\time 4/4 % Displayed time signature
 	\override Staff.TimeSignature.style = #'neomensural
+	\set Timing.measureLength = #(ly:make-moment 4/2) % Effective time sig
 	r1 d2 d4 d |
 	g8 f g a g4 f e8 d e f e4 d |
 	g2 d4 e f8 e f g f4. e8 |
@@ -101,18 +103,23 @@ Ric_Settimo_II = {
 	a1 b |
 	R\breve |
 	r1
-	% 3 section
 	\override Staff.TimeSignature.style = #'single-digit
+	\time 3/1 \bar ":|.|:"
+	\set Timing.measureLength = #(ly:make-moment 6/1) % Effective time sig
+	\set Timing.measurePosition = #(ly:make-moment -3/1) % Anacrusis
 	g1. g2 fs1 |
 	g1. e2 g1 g\breve a1 |
 	b\breve c1 g\breve bf1 |
 	a\breve g1 f1. e2 d1 |
 	g\breve fs1 g\longa*1/2
+	\bar ":|."
 	}
 
 Ric_Settimo_III = {
 	\key c \major
+	\time 4/4 % Displayed time signature
 	\override Staff.TimeSignature.style = #'neomensural
+	\set Timing.measureLength = #(ly:make-moment 4/2) % Effective time sig
 	R\breve | R\breve |
 	g2 g4 g d'8 c d e d4. c8 |
 	b a b c b4 a g2. a4 |
@@ -131,18 +138,23 @@ Ric_Settimo_III = {
 	f1 g2 g ~ |
 	g4 d g1 f2 |
 	g1
-	% 3 section
 	\override Staff.TimeSignature.style = #'single-digit
+	\time 3/1 \bar ":|.|:"
+	\set Timing.measureLength = #(ly:make-moment 6/1) % Effective time sig
+	\set Timing.measurePosition = #(ly:make-moment -3/1) % Anacrusis
 	d1. d2 d1 |
 	d1. c2 b1 e1. d2 c1 |
 	d\breve e1 e1. f2 g1 |
 	e\breve e1 c\breve b1 |
 	g a d d\longa*1/2
+	\bar ":|."
 	}
 
 Ric_Settimo_IV = {
 	\key c \major
+	\time 4/4 % Displayed time signature
 	\override Staff.TimeSignature.style = #'neomensural
+	\set Timing.measureLength = #(ly:make-moment 4/2) % Effective time sig
 	R\breve | R\breve |
 	r1 d2 d4 d |
 	g8 f g a g4 f e8 d e f e4 d |
@@ -161,13 +173,16 @@ Ric_Settimo_IV = {
 	d'8 c d e d4 c b8 a b c b4 a |
 	g2. a4 b c d2 |
 	g,1
-	% 3 section
 	\override Staff.TimeSignature.style = #'single-digit
+	\time 3/1 \bar ":|.|:"
+	\set Timing.measureLength = #(ly:make-moment 6/1) % Effective time sig
+	\set Timing.measurePosition = #(ly:make-moment -3/1) % Anacrusis
 	g1. g2 d1 |
 	g1. a2 b1 c1. b2 a1 |
 	g\breve c1 c\breve g1 |
 	a\breve e1 g\breve g1 |
 	e d\breve g\longa*1/2
+	\bar ":|."
 	}
 
 
@@ -182,7 +197,6 @@ Ric_Settimo_IV = {
 		subtitle = ##f
 	}
 	<<
-		\set strictBeatBeaming = ##t
 		\relative c'' {
 			\clef treble
 			\Ric_Settimo_I
@@ -209,6 +223,66 @@ Ric_Settimo_IV = {
 				}
 		}
 	>>
+}
+
+\pageBreak
+
+%
+% Parts (in original clefs)
+%
+
+\score {
+	\header {
+		title = \markup {\medium "Ricercare del Settimo Tuono" }
+		composer = ##f
+		subtitle = ##f
+	}
+	\relative c'' {
+		\clef treble
+		\Ric_Settimo_I
+		}
+}
+
+\pageBreak
+
+\score {
+	\header {
+		title = \markup {\medium "Ricercare del Settimo Tuono" }
+		composer = ##f
+		subtitle = ##f
+	}
+	\relative c' {
+		\clef mezzosoprano
+		\Ric_Settimo_II
+		}
+}
+
+\pageBreak
+
+\score {
+	\header {
+		title = \markup {\medium "Ricercare del Settimo Tuono" }
+		composer = ##f
+		subtitle = ##f
+	}
+	\relative c' {
+		\clef alto
+		\Ric_Settimo_III
+		}
+}
+
+\pageBreak
+
+\score {
+	\header {
+		title = \markup {\medium "Ricercare del Settimo Tuono" }
+		composer = ##f
+		subtitle = ##f
+	}
+	\relative c {
+		\clef tenor
+		\Ric_Settimo_IV
+		}
 }
 
 \pageBreak
