@@ -70,7 +70,7 @@ Ric_Settimo_I = {
 	\override Staff.TimeSignature.style = #'single-digit
 	\time 3/1 \bar ":|.|:"
 	\set Timing.measureLength = #(ly:make-moment 6/1) % Effective time sig
-	\set Timing.measurePosition = #(ly:make-moment -3/1) % Anacrusis
+	\set Timing.measurePosition = #(ly:make-moment 3/1) % Anacrusis
 	b1. b2 a1 |
 	b1. c2 d1 c1 e1. f2 |
 	g\breve e1 e\breve d1 |
@@ -106,7 +106,7 @@ Ric_Settimo_II = {
 	\override Staff.TimeSignature.style = #'single-digit
 	\time 3/1 \bar ":|.|:"
 	\set Timing.measureLength = #(ly:make-moment 6/1) % Effective time sig
-	\set Timing.measurePosition = #(ly:make-moment -3/1) % Anacrusis
+	\set Timing.measurePosition = #(ly:make-moment 3/1) % Anacrusis
 	g1. g2 fs1 |
 	g1. e2 g1 g\breve a1 |
 	b\breve c1 g\breve bf1 |
@@ -141,7 +141,7 @@ Ric_Settimo_III = {
 	\override Staff.TimeSignature.style = #'single-digit
 	\time 3/1 \bar ":|.|:"
 	\set Timing.measureLength = #(ly:make-moment 6/1) % Effective time sig
-	\set Timing.measurePosition = #(ly:make-moment -3/1) % Anacrusis
+	\set Timing.measurePosition = #(ly:make-moment 3/1) % Anacrusis
 	d1. d2 d1 |
 	d1. c2 b1 e1. d2 c1 |
 	d\breve e1 e1. f2 g1 |
@@ -176,7 +176,7 @@ Ric_Settimo_IV = {
 	\override Staff.TimeSignature.style = #'single-digit
 	\time 3/1 \bar ":|.|:"
 	\set Timing.measureLength = #(ly:make-moment 6/1) % Effective time sig
-	\set Timing.measurePosition = #(ly:make-moment -3/1) % Anacrusis
+	\set Timing.measurePosition = #(ly:make-moment 3/1) % Anacrusis
 	g1. g2 d1 |
 	g1. a2 b1 c1. b2 a1 |
 	g\breve c1 c\breve g1 |
