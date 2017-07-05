@@ -13,7 +13,7 @@
 	print-all-headers = ##t
 
 	% Page numbers bottom, centered
-	% From Lilypond Notation Reference section 3.2.2 Custom titles headers and footers
+	% From LilyPond Notation Reference section 3.2.2 Custom titles headers and footers
 	print-page-number = ##t
 	print-first-page-number = ##t
 	oddHeaderMarkup = \markup \null
@@ -57,7 +57,7 @@
 
 % Global title
 \header {
-	title = "Quattro Correnti (Toccate d'Intavolatura)"
+	title = "Quattro Correnti (Toccate d'Intavolatura, 1615/37)"
 	subtitle = "Girolamo Frescobaldi"
 	composer = " " % To make space below title
 }
@@ -75,7 +75,7 @@ CorrI_upst = \relative c'' {
 	e4. d8 <<e4 \\ cs>>| \override Stem.direction=#UP f8 g a b c4 |
 	d e f \revert Stem.directon | <<{bf,2 a4} \\ {d, e f}>> |
 	<< g2. \\ e>> | \break << {g4 a} \\ e2>> f4 |
-	<<e2 \\ cs>> d4 | e8 f g f <<e4 \\cs >> |
+	<<e2 \\ cs>> d4 | e8 f g f <<e4 \\cs>> |
 	d2 \bar ":|.|:" a'4 | a2 b4 |
 	c4. \autoBeamOff b8 c d \autoBeamOn | \break b4. a8 <<b4 \\ gs>> |
 	a8 g a b c4 | d e f |
@@ -174,7 +174,7 @@ CorrII_downst = \relative c'' {
 	R2. | \clef alto r4 a gs |
 	r a, b | c2 d4 |
 	<<d2. \\ b g>> | \clef bass <<{c2 g4} \\ {r4 c, b}>> |
-	<< g'2 \\ c, >> d4 | <<{r4 b' a} \\ {e2 fs4}>> |
+	<< g'2 \\ c,>> d4 | <<{r4 b' a} \\ {e2 fs4}>> |
 	<<b2 \\ gs>> a4 | <<{b2 s4} \\ {r4 b, cs}>> |
 	<<{a'2 s4} \\ {d,4 e f}>> | e d e |
 	<<{a2 ~ a4} \\ {a,2 ~ a4}>> | <<e''2 ~ \\ c a>> <<e'4 \\ gs,>> |
@@ -271,7 +271,7 @@ CorrIII_downst = \relative c' {
 	<<{c'2~ c4} \\ {f,4. g8 a4}>> | <<d2 \\ b~ g~>> <<e'4 \\ b g>> |
 	<<{e'2 f4} \\ {a,2 a4}>> | <<{f'2 f4} \\ {bf,2 d4}>> |
 	<<{g2 a4} \\ {c,2 a4}>> | <<{g'2 ~ g4} \\ {bf,4 c ~ c}>> |
-	<<f2. ~ \\ c ~ f, ~ >> | <<f'2 \\ c f,>> <<r4 \\ r \\ r >> |
+	<<f2. ~ \\ c ~ f, ~ >> | <<f'2 \\ c f,>> <<r4 \\ r \\ r>> |
 	<<{g'4 a ~ a} \\ {c,2 a4}>> | <<{f'4 g ~ g} \\ {bf,2 g4}>> |
 	<<{e'4 f ~ f} \\ {a,2 f4}>> | <<{d'4 e s} \\{g,2 f4}>> |
 	c'2 <<c4 \\ c,>> | f,8 g a bf c4 |
@@ -319,16 +319,20 @@ CorrIII_downst = \relative c' {
 \vspace #1
 \paragraph {
 	These pieces have been transcribed from a facsimile of
-	the 1637 edition of Frescobaldi’s “Toccate d’Intavolatura
-	di Cimbalo et Organo … Libro Primo” published by Studio per
+	the 1637 edition of Frescobaldi’s \italic{Toccate d’Intavolatura
+	di Cimbalo et Organo … Libro Primo} published by Studio per
 	Edizioni Scelte. This facsimile is available at
-	http://imslp.org/wiki/Toccate_e_partite_d'intavolatura,_Libro_1_(Frescobaldi,_Girolamo)
+	\typewriter\tiny{http://imslp.org/wiki/Toccate_e_partite_d'intavolatura,_Libro_1_(Frescobaldi,_Girolamo)}
 	}
 \paragraph {
 	This transcription aims to be an accurate rendition of the
 	original, within the limits of modern music notation. As such,
 	since the original publication is now in the public domain,
 	this edition is also in the public domain.
+	}
+\paragraph {
+	The LilyPond source can be downloaded from
+	\typewriter\tiny{https://github.com/semiprime/Sheet_Music}
 	}
 
 \vspace #1
@@ -338,6 +342,10 @@ CorrIII_downst = \relative c' {
 \paragraph {
 	Bars 2, 13:\hspace #0.5 The separation of the eighth-notes in
 	the original has been preserved.
+	}
+\paragraph {
+	Bar 27:\hspace #0.5 A repeat is marked in the B section of this
+	corrente, but not in the other three correnti.
 	}
 
 \vspace #1
@@ -355,17 +363,19 @@ CorrIII_downst = \relative c' {
 \vspace #0.5
 \paragraph {
 	Bar 25:\hspace #0.5 There is a mark attached to the stem of
-	the E which could be a partially written G. However, in this
-	publication chords typically have a stem on each note head,
-	rather than one for the whole chord as in modern notation
-	(see, for example, Corrente Terza, bar 23, RH). Therefore this
-	possible G has been rejected in this transcription.
+	the E which could be a partially written G. However, in the
+	original publication chords typically have a stem on each note
+	head, rather than one for the whole chord as in modern notation
+	(see, for example, Corrente Terza, bar 23, RH). Therefore
+	this possible G has been rejected in this transcription.
 	}
 \vspace #0.5
 \paragraph {
 	Bar 36:\hspace #0.5 B natural marked as B sharp in the
-	original. This follows the notational convention of the time
-	in which a sharp, rather than a natural, cancelled a flat.
+	original. In the notational convention of the time a sharp,
+	rather than a natural, cancelled a flat. However, in this
+	instance there is no B flat to cancel, so a misreading cannot
+	be ruled out.
 	}
 
 \vspace #1
