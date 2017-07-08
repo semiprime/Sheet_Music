@@ -28,7 +28,7 @@
 	}
 
 \layout {
- 	indent = #0
+	indent = #0
 }
 
 
@@ -306,8 +306,85 @@ CorrIII_downst = \relative c' {
 	>>
 }
 
+
 \pageBreak
 
+%%%%%%%%%%%%%%%%%%%%%%%
+%%  Corrente Quarta  %%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+CorrIV_upst = \relative c'' {
+	\clef treble
+	\key f \major
+	\time 3/4
+	\once \override Score.TimeSignature.stencil = #(double-time-signature-single "timesig.neomensural44" "3")
+	r2 d4 | d4. c8 bf4 |
+	a4. g8 fs4 | g2 <<f'4 \\ d>> |
+	<<{f4. e8 d4} \\ {d4. c8 bf4}>> | <<{c2 d4} \\ {a2 b4}>> |
+	<<{ef2 d4} \\ {c2 bf4}>> | <<d2 \\ bf>> g'4 |
+	f e d | <<e2 \\ cs>> a'4 |
+	a4. g8 f4 | e2 d4 |
+	cs a d | e8 f g f <<e4 \\ cs>> |
+	<<d2 \\ a fs>> \bar ":|." g'4 | g4. f8 ef4 |
+	d2 c4 | b g c |
+	d2 d4 | ef2 d4 |
+	c4. bf8 c4 | <<d2 \\ bf>> d,4 |
+	d4. e8 f 4 | <<{g2 a4} \\ {e2 fs4}>> |
+	bf4 g d' | d4. c8 bf4 |
+	<<a2 \\ fs>> g4 | <<a2 \\ fs>> d'4 |
+	<<{e2 fs4} \\ {c2 c4}>> | <<g'2 \\ b,>> g4 |
+	<<{a2 a4} \\ {g2 fs4}>> | <<g\breve*3/8\fermata d b>>
+	\bar "|."
+	}
+
+CorrIV_downst = \relative c'' {
+	\clef bass
+	\key f \major
+	R2. | \clef alto g2 <<d4 \\ bf>> |
+	<<e2 \\ c>> d4 | <<d2 \\ b g>> \clef bass << d'4 \\ a d,>> |
+	<<{d'2 ~ d4} \\ a2 {d,2 e4}>> | f4 e d |
+	<<{g2 g4} \\ {c,2 g4}>> | <<{d''2} \\ {g,4. f8}>> <<c'4 \\ g ef>> |
+	<<d'2 \\ a2 {d,4 c bf}>> | <<{a'4. g8 f4} \\ e2 {\stemDown a,2 ~ a4}>> |
+	<<e'2 \\ a, ~ >> <<a'4 \\ d, \stemDown a>> | <<{a'4. g8 f4} \\ {cs2 d4}>> |
+	<<a'2 \\ e a,>> <<f'4 \\ d bf>> | <<e2 \\ g,>> <<a'4 \\ e a,>> |
+	<<d2 \\d,>> r4 | r2 \clef alto <<g''4 \\ c,>> |
+	<<{g'4. f8 ef4} \\ {b2 c4}>> | <<d2 \\ g,>> \clef bass <<c4 ~\\ g e>> |
+	<<{c'2 b4} \\ {f4. e8 d4}>> | <<{c'4 g bf ~} \\ {c,2 d4}>> |
+	<<{bf'2 a4} \\ g2 {ef2 f4}>> | <<bf2. \\ f bf,>> |
+	<<bf'2 \\ f bf,>> d'4 | c bf a |
+	<<d2. \\ bf g>> | <<{d'2 d4} \\ a2 {fs2 g4}>> |
+	<<{d'4. c8 bf4} \\ {d,2 ~ d4}>> | <<a'2 \\ {d,4. c8 b4}>> |
+	<<g'2 \\ {c,4 bf a}>> | <<{g'4. f8 ef4} \\ g,2>> |
+	{\stemUp d'4 c d} | <<g\breve*3/8 \\ g,\fermata>> |
+	}
+
+
+\score {
+	\header {
+		title = \markup {\medium "Corrente Quarta" }
+		composer = ##f
+		subtitle = ##f
+	}
+	\new PianoStaff <<
+	\new Staff = "up" {
+		#(set-accidental-style 'forget)
+		\override Staff.Rest.style = #'classical
+		\override Staff.NoteHead.style = #'baroque
+		\override Script.padding = #0.55
+		\CorrIV_upst
+		}
+	\new Staff = "down" {
+		#(set-accidental-style 'forget)
+		\override Staff.Rest.style = #'classical
+		\override Staff.NoteHead.style = #'baroque
+		\override Script.padding = #0.2
+		\CorrIV_downst
+		}
+	>>
+}
+
+
+\pageBreak
 
 %%%%%%%%%%%%%
 %%  Notes  %%
@@ -395,5 +472,19 @@ CorrIII_downst = \relative c' {
 \paragraph{
 	Bar 26:\hspace #0.5 The E sharp in the original is transcribed
 	as an E natural.
+	}
+
+\vspace #1
+
+\fontsize #1 \medium "Corrente Quarta"
+\vspace #1
+\paragraph{
+	Bars 4, 6, 17, 18, 19, 28, 30, 32:\hspace #0.5 The B naturals are
+	marked with sharp signs in the original.
+	}
+\vspace #0.5
+\paragraph{
+	Bars 31–32:\hspace #0.5 The bar line between the last two bars
+	is absent in the original.
 	}
 }
